@@ -6,6 +6,7 @@ a
 	text-decoration: none
 	transition: .3s
 	outline: none
+	color: #212121
 button
 	font-family: $font0
 	padding: 0
@@ -32,6 +33,7 @@ body
 	min-width: 320px
 	font-family: $font0
 	margin: 0
+	background: #fff
 .container
 	display: -webkit-box
 	display: -webkit-flex
@@ -42,7 +44,7 @@ body
 	flex-wrap: wrap
 	margin-left: auto
 	margin-right: auto
-	max-width: 1370px
+	max-width: 1220px
 	height: 100%
 	@include breakpoint (lg)
 		max-width: 100%
@@ -59,8 +61,8 @@ body
 		-webkit-flex: 0 0 auto
 		-ms-flex: 0 0 auto
 		flex: 0 0 auto
-		margin-left: 5px
-		margin-right: 5px
+		margin-left: 10px
+		margin-right: 10px
 		-webkit-flex-basis: 0
 		-ms-flex-preferred-size: 0
 		flex-basis: 0
@@ -70,95 +72,77 @@ body
 		flex-grow: 1
 		width: 100%
 		&--1
-			max-width: -webkit-calc(100% / 15 * 1 - 10px)
-			max-width: calc(100% / 15 * 1 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 1 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 1 - 10px)
-			flex-basis: calc(100% / 15 * 1 - 10px)
+			max-width: -webkit-calc(100% / 12 * 1 - 20px)
+			max-width: calc(100% / 12 * 1 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 1 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 1 - 20px)
+			flex-basis: calc(100% / 12 * 1 - 20px)
 		&--2
-			max-width: -webkit-calc(100% / 15 * 2 - 10px)
-			max-width: calc(100% / 15 * 2 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 2 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 2 - 10px)
-			flex-basis: calc(100% / 15 * 2 - 10px)
+			max-width: -webkit-calc(100% / 12 * 2 - 20px)
+			max-width: calc(100% / 12 * 2 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 2 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 2 - 20px)
+			flex-basis: calc(100% / 12 * 2 - 20px)
 		&--3
-			max-width: -webkit-calc(100% / 15 * 3 - 10px)
-			max-width: calc(100% / 15 * 3 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 3 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 3 - 10px)
-			flex-basis: calc(100% / 15 * 3 - 10px)
+			max-width: -webkit-calc(100% / 12 * 3 - 20px)
+			max-width: calc(100% / 12 * 3 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 3 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 3 - 20px)
+			flex-basis: calc(100% / 12 * 3 - 20px)
 		&--4
-			max-width: -webkit-calc(100% / 15 * 4 - 10px)
-			max-width: calc(100% / 15 * 4 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 4 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 4 - 10px)
-			flex-basis: calc(100% / 15 * 4 - 10px)
+			max-width: -webkit-calc(100% / 12 * 4 - 20px)
+			max-width: calc(100% / 12 * 4 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 4 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 4 - 20px)
+			flex-basis: calc(100% / 12 * 4 - 20px)
 		&--5
-			max-width: -webkit-calc(100% / 15 * 5 - 10px)
-			max-width: calc(100% / 15 * 5 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 5 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 5 - 10px)
-			flex-basis: calc(100% / 15 * 5 - 10px)
+			max-width: -webkit-calc(100% / 12 * 5 - 20px)
+			max-width: calc(100% / 12 * 5 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 5 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 5 - 20px)
+			flex-basis: calc(100% / 12 * 5 - 20px)
 		&--6
-			max-width: -webkit-calc(100% / 15 * 6 - 10px)
-			max-width: calc(100% / 15 * 6 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 6 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 6 - 10px)
-			flex-basis: calc(100% / 15 * 6 - 10px)
+			max-width: -webkit-calc(100% / 12 * 6 - 20px)
+			max-width: calc(100% / 12 * 6 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 6 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 6 - 20px)
+			flex-basis: calc(100% / 12 * 6 - 20px)
 		&--7
-			max-width: -webkit-calc(100% / 15 * 7 - 10px)
-			max-width: calc(100% / 15 * 7 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 7 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 7 - 10px)
-			flex-basis: calc(100% / 15 * 7 - 10px)
+			max-width: -webkit-calc(100% / 12 * 7 - 20px)
+			max-width: calc(100% / 12 * 7 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 7 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 7 - 20px)
+			flex-basis: calc(100% / 12 * 7 - 20px)
 		&--8
-			max-width: -webkit-calc(100% / 15 * 8 - 10px)
-			max-width: calc(100% / 15 * 8 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 8 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 8 - 10px)
-			flex-basis: calc(100% / 15 * 8 - 10px)
+			max-width: -webkit-calc(100% / 12 * 8 - 20px)
+			max-width: calc(100% / 12 * 8 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 8 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 8 - 20px)
+			flex-basis: calc(100% / 12 * 8 - 20px)
 		&--9
-			max-width: -webkit-calc(100% / 15 * 9 - 10px)
-			max-width: calc(100% / 15 * 9 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 9 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 9 - 10px)
-			flex-basis: calc(100% / 15 * 9 - 10px)
+			max-width: -webkit-calc(100% / 12 * 9 - 20px)
+			max-width: calc(100% / 12 * 9 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 9 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 9 - 20px)
+			flex-basis: calc(100% / 12 * 9 - 20px)
 		&--10
-			max-width: -webkit-calc(100% / 15 * 10 - 10px)
-			max-width: calc(100% / 15 * 10 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 10 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 10 - 10px)
-			flex-basis: calc(100% / 15 * 10 - 10px)
+			max-width: -webkit-calc(100% / 12 * 10 - 20px)
+			max-width: calc(100% / 12 * 10 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 10 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 10 - 20px)
+			flex-basis: calc(100% / 12 * 10 - 20px)
 		&--11
-			max-width: -webkit-calc(100% / 15 * 11 - 10px)
-			max-width: calc(100% / 15 * 11 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 11 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 11 - 10px)
-			flex-basis: calc(100% / 15 * 11 - 10px)
+			max-width: -webkit-calc(100% / 12 * 11 - 20px)
+			max-width: calc(100% / 12 * 11 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 11 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 11 - 20px)
+			flex-basis: calc(100% / 12 * 11 - 20px)
 		&--12
-			max-width: -webkit-calc(100% / 15 * 12 - 10px)
-			max-width: calc(100% / 15 * 12 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 12 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 12 - 10px)
-			flex-basis: calc(100% / 15 * 12 - 10px)
-		&--13
-			max-width: -webkit-calc(100% / 15 * 13 - 10px)
-			max-width: calc(100% / 15 * 13 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 13 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 13 - 10px)
-			flex-basis: calc(100% / 15 * 13 - 10px)
-		&--14
-			max-width: -webkit-calc(100% / 15 * 14 - 10px)
-			max-width: calc(100% / 15 * 14 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 14 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 14 - 10px)
-			flex-basis: calc(100% / 15 * 14 - 10px)
-		&--15
-			max-width: -webkit-calc(100% / 15 * 15 - 10px)
-			max-width: calc(100% / 15 * 15 - 10px)
-			-webkit-flex-basis: -webkit-calc(100% / 15 * 15 - 10px)
-			-ms-flex-preferred-size: calc(100% / 15 * 15 - 10px)
-			flex-basis: calc(100% / 15 * 15 - 10px)
+			max-width: -webkit-calc(100% / 12 * 12 - 20px)
+			max-width: calc(100% / 12 * 12 - 20px)
+			-webkit-flex-basis: -webkit-calc(100% / 12 * 12 - 20px)
+			-ms-flex-preferred-size: calc(100% / 12 * 12 - 20px)
+			flex-basis: calc(100% / 12 * 12 - 20px)
 		&--df
 			display: flex
 		&--fdc
@@ -172,8 +156,8 @@ body
 		&--aic
 			align-items: center
 		&--offsetr2
-			margin-left: calc(100% / 15 * 2 + 5px) !important
+			margin-left: calc(100% / 12 * 2 + 10px) !important
 		&--offsetr1
-			margin-left: calc(100% / 15 * 1 + 5px) !important
+			margin-left: calc(100% / 12 * 1 + 10px) !important
 		&--rel
 			position: relative
