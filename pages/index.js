@@ -1,7 +1,11 @@
 export default function Home() {
   return (
 		<>
-			<p>Главная</p>
+			<div className="container">
+				<div className="container__elem container__elem--12">
+					213
+				</div>
+			</div>
 		</>
   )
 }
