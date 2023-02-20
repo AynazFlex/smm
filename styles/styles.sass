@@ -1,3 +1,50 @@
 @import 'var'
 @import 'incl'
+.headr
+	background: url(/img/design/main.jpg) no-repeat center top
+	border-radius: 0px 0px 72px 72px
+	height: 731px
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		bottom: -18px
+		left: 0
+		right: 0
+		width: 144px
+		margin: 0 auto
+		height: 62px
+		background: url(/img/design/tochka.png) no-repeat center bottom
+	&__utpBox
+		height: 416px
+		display: flex
+		width: 100%
+		position: absolute
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		margin: 217px 0 98px
+	&__Box
+		width: 609px
+		height: 100%
+		margin: 0 auto
+	&__utp
+		margin-bottom: 40px
+		span
+			line-height: 29px
+			color: #676767
+			text-align: center
+			display: flex
+			margin-bottom: 41px
+		.orangeButtonOrange
+			max-width: 250px
+			margin: 0 auto
+			font-size: 16px
+			padding: 19px 18px
+	&__utp1
+		display: flex
+		align-items: center
+		margin-bottom: 24px
+		img
+			max-width: initial
 @import "media"

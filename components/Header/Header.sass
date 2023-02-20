@@ -1,0 +1,56 @@
+@import 'styles/var'
+.header
+	height: 92px
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	@include breakpoint (lg)
+		color: #212121
+	&.scrolled
+		background: #fff
+		box-shadow: 0px 4px 35px 12px rgba(0, 0, 0, 0.04)
+	&__menu
+		a
+			line-height: 26px
+			margin: 0 14px
+			&:hover
+				text-decoration: underline
+.headerButtons
+	display: flex
+.orangeButton
+	border: 1px solid #FF772D
+	border-radius: 16px
+	padding: 16px 18px
+	color: #FF772D
+	display: flex
+	align-items: center
+	justify-content: center
+	&:hover
+		background: #FF772D
+		color: #fff
+.orangeButtonOrange
+	background: #FF772D
+	display: flex
+	align-items: center
+	justify-content: center
+	color: #fff
+	border-radius: 16px
+	padding: 16px 18px
+	border: 1px solid transparent
+	box-shadow: 0px 12px 40px rgba(255, 119, 45, 0.2)
+	margin-left: 16px
+	&:hover
+		color: #FF772D
+		background: #fff
+		border: 1px solid #FF772D
+.menu
+	a
+		line-height: 26px
+		margin: 0 14px
+		&:hover
+			text-decoration: underline
+.logo
+	display: flex
+	align-items: center
+	margin-right: 18px

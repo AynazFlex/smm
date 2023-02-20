@@ -3,7 +3,7 @@ export default function Home() {
 		<>
 			<div className="container">
 				<div className="container__elem container__elem--12">
-					213
+					1
 				</div>
 			</div>
 		</>
