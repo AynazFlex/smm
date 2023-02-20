@@ -1,4 +1,3 @@
-import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Montserrat, Unbounded } from '@next/font/google'
 
@@ -16,25 +15,7 @@ import '../styles/styles.sass'
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
-			<div className='headr'>
-				<Header />
-				<div className='headr__utpBox'>
-					<div className='headr__Box'>
-						<div className='headr__utp'>
-							<div className='headr__utp1'>
-								<img src="img/design/utp.png" alt="" />
-							</div>
-							<span>Получайте подписчиков, лайки, репосты, просмотры, прослушивания и любую другую активность на свои профили в социальных сетях по самым низким ценам на рынке и в самые быстрые сроки!</span>
-							<a href="#" className='orangeButtonOrange'>Начать продвижение</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<main className='main'>
-				<section className='content'>
-					<Component {...pageProps} />
-				</section>
-			</main>
+			<Component {...pageProps} />
 			{/* <Footer /> */}
 		</>
 	)

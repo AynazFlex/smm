@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from "react";
-import './Header.sass';
+import './HeaderIndex.sass';
 
 const Header = () => {
 	const [scroll, setScroll] = useState(false)
