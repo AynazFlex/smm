@@ -1,184 +1,652 @@
 import HeaderIndex from '../components/HeaderIndex'
 import Headr from '../components/Headr'
-import { useState } from "react"
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { useState, useRef } from "react"
+
+
+
 export default function Home() {
 	const [value, setValue] = useState(null);
 	const [isShown, setIsShown] = useState(false);
-	
-function chengeValue() {
-	setValue(event.target.value);
-}
-return (
-	<>
-		<HeaderIndex />
-		<Headr />
-		<main className='main'>
-			<section className='section1 section'>
-				<div className='container'>
-					<div className='container__elem container__elem--12'>
-						<div className='section1__wr'>
-							<div className='section__h2'>
-								<img src="img/design/s1zag.jpg" alt="Быстрый заказ" />
-							</div>
-							<div className="section1__wrap">
-								<div className="section1Items">
-									<div className="section1Items__title">Сначала выберите социальную сеть</div>
-									<div className="section1Items__wr">
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz1.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">Instagram</div>
-										</button>
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz2.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">Twitter</div>
-										</button>
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz3.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">VK</div>
-										</button>
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz4.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">YouTube</div>
-										</button>
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz5.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">Telegram</div>
-										</button>
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz6.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">Facebook</div>
-										</button>
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz7.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">TikTok</div>
-										</button>
-										<button className="section1Item" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz8.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">Twitch</div>
-										</button>
-										<button className="section1Item section1Item--full" type='button'>
-											<div className="section1Item__ico">
-												<img src="img/design/bz9.svg" alt="" />
-											</div>
-											<div className="section1Item__txt">RuTube</div>
-										</button>
-									</div>
+	function chengeValue() {
+		setValue(event.target.value);
+	}
+	const swiperRef = useRef();
+	return (
+		<>
+			<HeaderIndex />
+			<Headr />
+			<main className='main'>
+				<section className='section section1'>
+					<div className='container'>
+						<div className='container__elem container__elem--12'>
+							<div className='section1__wr'>
+								<div className='section__h2'>
+									<img src="img/design/s1zag.jpg" alt="Быстрый заказ" />
 								</div>
-								<div className="section1Items">
-									<div className="section1Items__title">Затем выберите услугу</div>
-									<div className="section1Items__steps">
-
-
-									{isShown || (
-											<>
-
-										<div className="section1Items__step1">
-											<div className="section1Itemstep1">
-												<label className="checkbox_vib checkbox_vib--check">
-													<input type="radio" className="checkbox_vib__real" value="1"
-														checked={value == '1' ? true : false}
-														onChange={chengeValue} name="t1" />
-													<span className="checkbox_vib__fake"></span> <span className="checkbox_vib__title">1 вариант</span>
-												</label>
-												<label className="checkbox_vib checkbox_vib--check">
-													<input type="radio" className="checkbox_vib__real" value="2"
-														checked={value == '2' ? true : false}
-														onChange={chengeValue} name="t1" /> <span className="checkbox_vib__fake"></span> <span className="checkbox_vib__title">2 вариант</span>
-												</label>
-												<label className="checkbox_vib checkbox_vib--check checkbox_vib--mb0">
-													<input type="radio" className="checkbox_vib__real" value="3"
-														checked={value == '3' ? true : false}
-														onChange={chengeValue} name="t1" /> <span className="checkbox_vib__fake"></span> <span className="checkbox_vib__title">3 вариант</span>
-												</label>
-											</div>
-										</div>
-
-										</>
-										)}
-
-										{isShown && (
-											<>
-												<div className="section1Items__wr2">
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u1.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">Подписчики</div>
-													</button>
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u2.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">Зрители</div>
-													</button>
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u3.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">Лайки</div>
-													</button>
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u4.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">Статистика</div>
-													</button>
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u5.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">Просмотры</div>
-													</button>
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u6.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">IGTV</div>
-													</button>
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u7.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">Комментарии</div>
-													</button>
-													<button className="section1Item" type='button'>
-														<div className="section1Item__ico">
-															<img src="img/design/u8.svg" alt="" />
-														</div>
-														<div className="section1Item__txt">Reels</div>
-													</button>
+								<div className="section1__wrap">
+									<div className="section1Items">
+										<div className="section1Items__title">Сначала выберите социальную сеть</div>
+										<div className="section1Items__wr">
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz1.svg" alt="" />
 												</div>
-											</>
-										)}
-
-
+												<div className="section1Item__txt">Instagram</div>
+											</button>
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz2.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">Twitter</div>
+											</button>
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz3.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">VK</div>
+											</button>
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz4.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">YouTube</div>
+											</button>
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz5.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">Telegram</div>
+											</button>
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz6.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">Facebook</div>
+											</button>
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz7.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">TikTok</div>
+											</button>
+											<button className="section1Item" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz8.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">Twitch</div>
+											</button>
+											<button className="section1Item section1Item--full" type='button'>
+												<div className="section1Item__ico">
+													<img src="img/design/bz9.svg" alt="" />
+												</div>
+												<div className="section1Item__txt">RuTube</div>
+											</button>
+										</div>
 									</div>
-									<div className="section1Items__wr1">
-										<button onClick={() => setIsShown(true)} disabled={`${value ? "" : "disabled"}`} type='button' className="orangeButtonOrange">Оформить  заказ</button>
+									<div className="section1Items">
+										<div className="section1Items__title">Затем выберите услугу</div>
+										<div className="section1Items__steps">
+
+
+											{isShown || (
+												<>
+
+													<div className="section1Items__step1">
+														<div className="section1Itemstep1">
+															<label className="checkbox_vib checkbox_vib--check">
+																<input type="radio" className="checkbox_vib__real" value="1"
+																	checked={value == '1' ? true : false}
+																	onChange={chengeValue} name="t1" />
+																<span className="checkbox_vib__fake"></span> <span className="checkbox_vib__title">1 вариант</span>
+															</label>
+															<label className="checkbox_vib checkbox_vib--check">
+																<input type="radio" className="checkbox_vib__real" value="2"
+																	checked={value == '2' ? true : false}
+																	onChange={chengeValue} name="t1" /> <span className="checkbox_vib__fake"></span> <span className="checkbox_vib__title">2 вариант</span>
+															</label>
+															<label className="checkbox_vib checkbox_vib--check checkbox_vib--mb0">
+																<input type="radio" className="checkbox_vib__real" value="3"
+																	checked={value == '3' ? true : false}
+																	onChange={chengeValue} name="t1" /> <span className="checkbox_vib__fake"></span> <span className="checkbox_vib__title">3 вариант</span>
+															</label>
+														</div>
+													</div>
+
+												</>
+											)}
+
+											{isShown && (
+												<>
+													<div className="section1Items__wr2">
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u1.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">Подписчики</div>
+														</button>
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u2.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">Зрители</div>
+														</button>
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u3.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">Лайки</div>
+														</button>
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u4.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">Статистика</div>
+														</button>
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u5.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">Просмотры</div>
+														</button>
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u6.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">IGTV</div>
+														</button>
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u7.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">Комментарии</div>
+														</button>
+														<button className="section1Item" type='button'>
+															<div className="section1Item__ico">
+																<img src="img/design/u8.svg" alt="" />
+															</div>
+															<div className="section1Item__txt">Reels</div>
+														</button>
+													</div>
+												</>
+											)}
+
+
+										</div>
+										<div className="section1Items__wr1">
+											<button onClick={() => setIsShown(true)} disabled={`${value ? "" : "disabled"}`} type='button' className="orangeButtonOrange">Оформить  заказ</button>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-		</main>
-	</>
-)
+				</section>
+
+				<section className='section section2'>
+					<div className='container'>
+						<div className='container__elem container__elem--12'>
+							<div className="section__h2">
+								<img src="img/design/s2zag.jpg" alt="Отзывы клиентов" />
+								<div className='section2__sliderNav'>
+									<button onClick={() => swiperRef.current?.slidePrev()}>
+										<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect width="52" height="52" rx="12" fill="#F9F9F9" />
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M30.9435 15.724C31.4642 16.2447 31.4642 17.0889 30.9435 17.6096L22.5529 26.0002L30.9435 34.3907C31.4642 34.9114 31.4642 35.7556 30.9435 36.2763C30.4228 36.797 29.5785 36.797 29.0578 36.2763L19.7245 26.943C19.2038 26.4223 19.2038 25.5781 19.7245 25.0574L29.0578 15.724C29.5785 15.2033 30.4228 15.2033 30.9435 15.724Z" fill="#A3ACC5" />
+										</svg>
+									</button>
+									<button onClick={() => swiperRef.current?.slideNext()}>
+										<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="52" y="52" width="52" height="52" rx="12" transform="rotate(180 52 52)" fill="#F9F9F9" />
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M21.0565 36.276C20.5358 35.7553 20.5358 34.9111 21.0565 34.3904L29.4471 25.9998L21.0565 17.6093C20.5358 17.0886 20.5358 16.2444 21.0565 15.7237C21.5772 15.203 22.4215 15.203 22.9422 15.7237L32.2755 25.057C32.7962 25.5777 32.7962 26.4219 32.2755 26.9426L22.9422 36.276C22.4215 36.7967 21.5772 36.7967 21.0565 36.276Z" fill="#A3ACC5" />
+										</svg>
+									</button>
+								</div>
+							</div>
+
+
+							<Swiper
+								id='slider1'
+								modules={[Navigation]}
+								spaceBetween={24}
+								slidesPerView={3.18}
+								onBeforeInit={(swiper) => {
+									swiperRef.current = swiper;
+								}}
+								onSwiper={(swiper) => console.log(swiper)}
+								onSlideChange={() => console.log('slide change')}
+							>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+								<SwiperSlide>
+									<div className="slider1Item">
+										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
+										<div className="slider1Item__wr">
+											<div className="slider1Item__ico">
+												<img src="img/design/face.svg" alt="" />
+											</div>
+											<div className="slider1Item__wrap">
+												<div className="slider1Item__title">Александр</div>
+												<div className="stars">
+													<div className="stars__wr">
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+														<em>
+															<svg width="10" height="11" viewBox="0 0 10 11" xmlns="http://www.w3.org/2000/svg">
+																<path d="M4.23916 1.34164C4.47864 0.604591 5.52136 0.604592 5.76085 1.34164L6.39199 3.28409C6.49909 3.61371 6.80625 3.83688 7.15283 3.83688H9.19525C9.97023 3.83688 10.2924 4.82857 9.66548 5.28409L8.01313 6.4846C7.73274 6.68831 7.61541 7.04941 7.72251 7.37902L8.35365 9.32148C8.59313 10.0585 7.74955 10.6714 7.12258 10.2159L5.47023 9.0154C5.18984 8.81169 4.81016 8.81169 4.52977 9.0154L2.87742 10.2159C2.25045 10.6714 1.40687 10.0585 1.64635 9.32148L2.27749 7.37902C2.38459 7.04941 2.26726 6.68831 1.98687 6.4846L0.334522 5.28409C-0.292449 4.82857 0.029772 3.83688 0.804751 3.83688H2.84717C3.19375 3.83688 3.50091 3.61371 3.60801 3.28409L4.23916 1.34164Z" fill="#FF772D" />
+															</svg>
+														</em>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</SwiperSlide>
+							</Swiper>
+
+
+						</div>
+					</div>
+
+				</section>
+			</main>
+		</>
+	)
 }
