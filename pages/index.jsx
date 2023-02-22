@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { useState, useRef } from "react"
 import Faqs from '../components/Faqs';
-
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
 						<div className='container__elem container__elem--12'>
 							<div className='section1__wr'>
 								<div className='section__h2'>
-									<img src="img/design/s1zag.jpg" alt="Быстрый заказ" />
+									<Image src="Image/design/s1zag.jpg" alt="Быстрый заказ" />
 								</div>
 								<div className="section1__wrap">
 									<div className="section1Items">
@@ -34,55 +34,55 @@ export default function Home() {
 										<div className="section1Items__wr">
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz1.svg" alt="" />
+													<Image src="Image/design/bz1.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">Instagram</div>
 											</button>
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz2.svg" alt="" />
+													<Image src="Image/design/bz2.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">Twitter</div>
 											</button>
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz3.svg" alt="" />
+													<Image src="Image/design/bz3.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">VK</div>
 											</button>
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz4.svg" alt="" />
+													<Image src="Image/design/bz4.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">YouTube</div>
 											</button>
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz5.svg" alt="" />
+													<Image src="Image/design/bz5.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">Telegram</div>
 											</button>
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz6.svg" alt="" />
+													<Image src="Image/design/bz6.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">Facebook</div>
 											</button>
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz7.svg" alt="" />
+													<Image src="Image/design/bz7.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">TikTok</div>
 											</button>
 											<button className="section1Item" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz8.svg" alt="" />
+													<Image src="Image/design/bz8.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">Twitch</div>
 											</button>
 											<button className="section1Item section1Item--full" type='button'>
 												<div className="section1Item__ico">
-													<img src="img/design/bz9.svg" alt="" />
+													<Image src="Image/design/bz9.svg" alt="" />
 												</div>
 												<div className="section1Item__txt">RuTube</div>
 											</button>
@@ -120,49 +120,49 @@ export default function Home() {
 													<div className="section1Items__wr2">
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u1.svg" alt="" />
+																<Image src="Image/design/u1.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">Подписчики</div>
 														</button>
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u2.svg" alt="" />
+																<Image src="Image/design/u2.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">Зрители</div>
 														</button>
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u3.svg" alt="" />
+																<Image src="Image/design/u3.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">Лайки</div>
 														</button>
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u4.svg" alt="" />
+																<Image src="Image/design/u4.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">Статистика</div>
 														</button>
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u5.svg" alt="" />
+																<Image src="Image/design/u5.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">Просмотры</div>
 														</button>
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u6.svg" alt="" />
+																<Image src="Image/design/u6.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">IGTV</div>
 														</button>
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u7.svg" alt="" />
+																<Image src="Image/design/u7.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">Комментарии</div>
 														</button>
 														<button className="section1Item" type='button'>
 															<div className="section1Item__ico">
-																<img src="img/design/u8.svg" alt="" />
+																<Image src="Image/design/u8.svg" alt="" />
 															</div>
 															<div className="section1Item__txt">Reels</div>
 														</button>
@@ -183,7 +183,7 @@ export default function Home() {
 					<div className='container'>
 						<div className='container__elem container__elem--12'>
 							<div className="section__h2">
-								<img src="img/design/s2zag.jpg" alt="Отзывы клиентов" />
+								<Image src="Image/design/s2zag.jpg" alt="Отзывы клиентов" />
 								<div className='section2__sliderNav'>
 									<button onClick={() => swiperRef.current?.slidePrev()}>
 										<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -215,7 +215,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -257,7 +257,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -299,7 +299,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -341,7 +341,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -383,7 +383,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -425,7 +425,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -467,7 +467,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -509,7 +509,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -551,7 +551,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -593,7 +593,7 @@ export default function Home() {
 										<div className="slider1Item__cont">SMMSMM помог мне продвинуть канал на YouTube. Заказывал подписчиков и лайки, все прошло быстро и качественно, всем рекомендую!</div>
 										<div className="slider1Item__wr">
 											<div className="slider1Item__ico">
-												<img src="img/design/face.svg" alt="" />
+												<Image src="Image/design/face.svg" alt="" />
 											</div>
 											<div className="slider1Item__wrap">
 												<div className="slider1Item__title">Александр</div>
@@ -641,15 +641,15 @@ export default function Home() {
 								<div className="skidos">
 									<div className="skidos__top">
 										<span>
-											<img src="img/design/s3zag.jpg" alt="Скидки в нашем телеграм-канале" />
+											<Image src="Image/design/s3zag.jpg" alt="Скидки в нашем телеграм-канале" />
 											<em>до 50%</em>
 										</span>
 									</div>
 									<div className="skidos__text">Раздаем промокоды в Telegram каждую неделю</div>
 									<button className="skidos__but orangeButtonOrange" type='button'>Получить промокод</button>
 								</div>
-								<div className="section3__img">
-									<img src="img/design/telega.svg" alt="" />
+								<div className="section3__Image">
+									<Image src="Image/design/telega.svg" alt="" />
 								</div>
 							</div>
 						</div>
@@ -659,41 +659,41 @@ export default function Home() {
 					<div className="container">
 						<div className="container__elem container__elem--12">
 							<div className="section__h2">
-								<img src="img/design/s4zag.jpg" alt="Как работает SMMFlow" />
+								<Image src="Image/design/s4zag.jpg" alt="Как работает SMMFlow" />
 							</div>
 							<div className="section4Item">
 								<div className="section4Item__col">
-									<img src="img/design/flow01.jpg" alt="01" />
+									<Image src="Image/design/flow01.jpg" alt="01" />
 								</div>
 								<div className="section4Item__col1">
-									<img src="img/design/flow01zag.jpg" alt="Настройка" />
+									<Image src="Image/design/flow01zag.jpg" alt="Настройка" />
 								</div>
 								<div className="section4Item__text">Добавьте YouTube-канал, выберите настройки таргетинга: страны, города, возраст, пол, интересы ЦА и удобный недельный бюджет продвижения</div>
 							</div>
 							<div className="section4Item">
 								<div className="section4Item__col section4Item__col--t01">
-									<img src="img/design/flow02.jpg" alt="02" />
+									<Image src="Image/design/flow02.jpg" alt="02" />
 								</div>
 								<div className="section4Item__col1 section4Item__col1--t1">
-									<img src="img/design/flow02zag.jpg" alt="Оплата" />
+									<Image src="Image/design/flow02zag.jpg" alt="Оплата" />
 								</div>
 								<div className="section4Item__text">Оплатите продвижение любым удобным способом (по карте / Paypal / ЮMoney и др.) Пополняйте баланс кабинета для непрерывного продвижения канала</div>
 							</div>
 							<div className="section4Item section4Item--fix">
 								<div className="section4Item__col section4Item__col--t1">
-									<img src="img/design/flow03.jpg" alt="03" />
+									<Image src="Image/design/flow03.jpg" alt="03" />
 								</div>
 								<div className="section4Item__col1 section4Item__col1--t1">
-									<img src="img/design/flow03zag.jpg" alt="Старт" />
+									<Image src="Image/design/flow03zag.jpg" alt="Старт" />
 								</div>
 								<div className="section4Item__text">Продвижение канала начинается на самом YouTube. Видео показывают пользователям, интересующимся Вашей тематикой. Следить за этим процессом можно в личном кабинете</div>
 							</div>
 							<div className="section4Item section4Item--fix1">
 								<div className="section4Item__col section4Item__col--t1">
-									<img src="img/design/flow04.jpg" alt="04" />
+									<Image src="Image/design/flow04.jpg" alt="04" />
 								</div>
 								<div className="section4Item__col1 section4Item__col1--t1">
-									<img src="img/design/flow04zag.jpg" alt="Результат" />
+									<Image src="Image/design/flow04zag.jpg" alt="Результат" />
 								</div>
 								<div className="section4Item__text">Вы получаете настоящих заинтересованных подписчиков, лайки и комментарии. В личном кабинете Вы найдете подробную статистику по продвижению</div>
 							</div>
@@ -704,7 +704,7 @@ export default function Home() {
 					<div className="container">
 						<div className="container__elem container__elem--12">
 							<div className="section__h2">
-								<img src="img/design/s5zag.jpg" alt="Преимущества" />
+								<Image src="Image/design/s5zag.jpg" alt="Преимущества" />
 							</div>
 							<div className="section4__wr">
 								<div className="preim">
@@ -718,7 +718,7 @@ export default function Home() {
 								<div className="section4__wr1">
 									<div className="preim preim--act">
 										<div className="preim__promo">
-											<img src="img/design/logo.svg" alt="" />
+											<Image src="Image/design/logo.svg" alt="" />
 										</div>
 										<div className="preim__block">
 											<span>1-2%</span>
@@ -759,7 +759,7 @@ export default function Home() {
 					<div className="container">
 						<div className="container__elem container__elem--12">
 							<div className="section__h2">
-								<img src="img/design/s6zag.jpg" alt="Частые вопросы" />
+								<Image src="Image/design/s6zag.jpg" alt="Частые вопросы" />
 							</div>
 							<Faqs />
 						</div>
@@ -771,7 +771,7 @@ export default function Home() {
 							<div className="zakaz">
 								<div className="zakaz__col">
 									<div className="zakaz__title">
-										<img src="img/design/s7zag.jpg" alt="Закажите больше активности в ваших социальных сетях" />
+										<Image src="Image/design/s7zag.jpg" alt="Закажите больше активности в ваших социальных сетях" />
 									</div>
 									<div className="zakaz__button">
 										<button type='button' className='orangeButtonOrange'>Начать продвижение</button>
@@ -781,30 +781,30 @@ export default function Home() {
 									<div className="zakaz__wr">
 										<div className="zakaz__microCol">
 											<span>
-												<img src="img/design/z1.svg" alt="" />
+												<Image src="Image/design/z1.svg" alt="" />
 											</span>
 											<span>
-												<img src="img/design/z2.svg" alt="" />
+												<Image src="Image/design/z2.svg" alt="" />
 											</span>
 											<span>
-												<img src="img/design/z3.svg" alt="" />
+												<Image src="Image/design/z3.svg" alt="" />
 											</span>
 											<span>
-												<img src="img/design/z4.svg" alt="" />
+												<Image src="Image/design/z4.svg" alt="" />
 											</span>
 										</div>
 										<div className="zakaz__microCol zakaz__microCol--one">
 											<span>
-												<img src="img/design/z1.svg" alt="" />
+												<Image src="Image/design/z1.svg" alt="" />
 											</span>
 											<span>
-												<img src="img/design/z2.svg" alt="" />
+												<Image src="Image/design/z2.svg" alt="" />
 											</span>
 											<span>
-												<img src="img/design/z3.svg" alt="" />
+												<Image src="Image/design/z3.svg" alt="" />
 											</span>
 											<span>
-												<img src="img/design/z4.svg" alt="" />
+												<Image src="Image/design/z4.svg" alt="" />
 											</span>
 										</div>
 									</div>

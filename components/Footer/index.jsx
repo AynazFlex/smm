@@ -1,4 +1,5 @@
 import './Footer.sass';
+import Image from 'next/image';
 
 const Footer = () => {
 	return (
@@ -6,7 +7,7 @@ const Footer = () => {
 			<div className="container">
 				<div className="container__elem container__elem--8">
 					<a href="/" className="foot__logo">
-						<img src="img/design/logo.svg" alt="" />
+						<Image src="Image/design/logo.svg" alt="" />
 					</a>
 					<div className="foot__txt">SMMSMM - сервис, где вы сможете приобрести качественное продвижение в социальных сетях по выгодным ценам.</div>
 					<nav className='foot__topnav'>
@@ -60,16 +61,16 @@ const Footer = () => {
 						</div>
 						<div className="karts">
 							<span>
-								<img src="img/design/k1.png" alt="" />
+								<Image src="Image/design/k1.png" alt="" />
 							</span>
 							<span>
-								<img src="img/design/k2.png" alt="" />
+								<Image src="Image/design/k2.png" alt="" />
 							</span>
 							<span>
-								<img src="img/design/k3.png" alt="" />
+								<Image src="Image/design/k3.png" alt="" />
 							</span>
 							<span>
-								<img src="img/design/k4.png" alt="" />
+								<Image src="Image/design/k4.png" alt="" />
 							</span>
 						</div>
 					</div>
