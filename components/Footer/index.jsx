@@ -1,4 +1,6 @@
 import './Footer.sass';
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/no-html-link-for-pages */
 
 const Footer = () => {
 	return (
