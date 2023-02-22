@@ -18,7 +18,7 @@ const Header = () => {
 						<img src="img/design/logo.svg" alt="" />
 					</Link>
 					<nav className='menu'>
-						<Link href='/'>Услуги</Link>
+						<Link href='/services'>Услуги</Link>
 						<Link href='/'>Отзывы</Link>
 						<Link href='/'>Как это работает</Link>
 						<Link href='/'>Преимущества</Link>
