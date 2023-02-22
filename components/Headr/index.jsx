@@ -1,4 +1,5 @@
 import './Headr.sass';
+/* eslint-disable @next/next/no-img-element */
 
 const Headr = () => {
 	return (

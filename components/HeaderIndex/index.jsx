@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from "react";
 import './HeaderIndex.sass';
+/* eslint-disable @next/next/no-img-element */
 
 const Header = () => {
 	const [scroll, setScroll] = useState(false)
