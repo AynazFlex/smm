@@ -147,6 +147,7 @@
 		margin-bottom: 0
 .section2
 	overflow: hidden
+	padding-bottom: 50px
 	&__sliderNav
 		display: flex
 		align-items: center
@@ -198,4 +199,190 @@
 		font-size: 16px
 		line-height: 29px
 		color: #676767
+.section3
+	padding-top: 93px
+	&__wr
+		background: #F9F9F9
+		border-radius: 32px
+		display: flex
+		padding: 83px 64px 0
+	&__img
+		display: flex
+		align-items: center
+		position: relative
+		top: -47px
+		height: 339px
+		left: 34px
+.skidos
+	&__top
+		span
+			display: flex
+			align-items: center
+			position: relative
+			img
+				mix-blend-mode: multiply
+			em
+				font-style: normal
+				background: rgba(255, 119, 45, 0.15)
+				border-radius: 55px
+				padding: 14px 36px
+				font-size: 24px
+				line-height: 36px
+				font-weight: 700
+				color: $accent
+				position: absolute
+				left: 202px
+				top: -16px
+	&__text
+		margin-top: 40px
+		font-size: 16px
+		line-height: 29px
+		color: #676767
+	&__but
+		&.orangeButtonOrange
+			padding: 19px 39px
+			margin-left: 0
+			margin-top: 40px
+.section4
+	img
+		mix-blend-mode: multiply
+	&__wr
+		display: flex
+		.preim
+			padding: 24px 24px 24px 0
+			margin-right: 153px
+	&__wr1
+		display: flex
+		.preim
+			min-width: 308px
+			padding: 24px
+			margin-right: 24px
+			background: #F9F9F9			
+			&--act
+				background: $accent
+				box-shadow: 0px 12px 40px rgba(255, 119, 45, 0.2)
+				.preim__block
+					span
+						color: #fff
+			&__block
+				span
+					color: #212121
+					font-weight: 700
+					font-size: 16px
+					line-height: 29px
+.section4Item
+	display: flex
+	overflow: hidden
+	align-items: center
+	padding: 24px 32px
+	background: #fff
+	box-shadow: 0px 4px 35px 12px rgba(0, 0, 0, 0.04)
+	border-radius: 24px
+	margin-bottom: 24px
+	&__col
+		position: relative
+		bottom: -28px
+		left: 42px
+		margin-right: 169px
+		&--t01
+			bottom: -31px
+			left: 33px
+		&--t1
+			bottom: -44px
+			left: 33px
+	&__col1
+		display: flex
+		align-items: center
+		height: 100%
+		&--t1
+			position: relative
+			left: -56px
+	&__text
+		color: #676767
+		font-size: 16px
+		line-height: 29px
+		max-width: 467px
+		margin-left: auto
+		width: 100%
+	&--fix
+		padding: 33px 32px
+	&--fix1
+		padding: 33px 32px
+		margin-bottom: 0
+.preim
+	padding: 24px
+	height: 409px
+	display: flex
+	border-radius: 24px
+	flex-direction: column
+	&__block
+		margin-top: auto
+		height: 236px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-direction: column
+		span
+			font-weight: 700
+			white-space: nowrap
+			font-size: 16px
+			line-height: 29px
+	&__promo
+		background: #fff
+		min-width: 154px
+		margin: 0 auto
+		font-weight: 700
+		font-size: 16px
+		justify-content: center
+		height: 69px
+		display: flex
+		align-items: center
+		padding: 24.5px 14px
+		box-shadow: 0px 4px 35px 12px rgba(0, 0, 0, 0.04)
+		border-radius: 16px
+.zakaz
+	padding: 75px 64px
+	overflow: hidden
+	display: flex
+	height: 336px
+	background: #F9F9F9
+	border-radius: 32px
+	&__title
+		display: flex
+		align-items: center
+		img
+			mix-blend-mode: multiply
+	&__button
+		margin-top: 49px
+		button
+			margin-left: 0
+			padding: 19px 42px
+	&__wr
+		display: flex
+		position: relative
+		top: -114px
+	&__col
+		&:not(.tr)
+			margin-right: 119px
+	&__microCol
+		display: flex
+		margin-right: 28px
+		flex-direction: column
+		animation: 4s linear 0s infinite alternate animating-multiple-properties
+		span
+			display: flex
+			align-items: center
+			margin-bottom: 29px
+		&--one
+			animation: 4s linear 0s infinite alternate animating-multiple-properties1
+@keyframes animating-multiple-properties
+	from
+		transform: translateY(-50%)
+	to 
+		transform: translateY(50%)
+@keyframes animating-multiple-properties1
+	from
+		transform: translateY(50%)
+	to 
+		transform: translateY(-50%)
 @import "media"

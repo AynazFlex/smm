@@ -5,13 +5,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useState, useRef } from "react"
+import Faqs from '../components/Faqs';
 
 
 
 export default function Home() {
 	const [value, setValue] = useState(null);
 	const [isShown, setIsShown] = useState(false);
-	function chengeValue() {
+	function chengeValue(event) {
 		setValue(event.target.value);
 	}
 	const swiperRef = useRef();
@@ -90,11 +91,8 @@ export default function Home() {
 									<div className="section1Items">
 										<div className="section1Items__title">Затем выберите услугу</div>
 										<div className="section1Items__steps">
-
-
 											{isShown || (
 												<>
-
 													<div className="section1Items__step1">
 														<div className="section1Itemstep1">
 															<label className="checkbox_vib checkbox_vib--check">
@@ -115,10 +113,8 @@ export default function Home() {
 															</label>
 														</div>
 													</div>
-
 												</>
 											)}
-
 											{isShown && (
 												<>
 													<div className="section1Items__wr2">
@@ -173,8 +169,6 @@ export default function Home() {
 													</div>
 												</>
 											)}
-
-
 										</div>
 										<div className="section1Items__wr1">
 											<button onClick={() => setIsShown(true)} disabled={`${value ? "" : "disabled"}`} type='button' className="orangeButtonOrange">Оформить  заказ</button>
@@ -185,7 +179,6 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-
 				<section className='section section2'>
 					<div className='container'>
 						<div className='container__elem container__elem--12'>
@@ -195,19 +188,17 @@ export default function Home() {
 									<button onClick={() => swiperRef.current?.slidePrev()}>
 										<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<rect width="52" height="52" rx="12" fill="#F9F9F9" />
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M30.9435 15.724C31.4642 16.2447 31.4642 17.0889 30.9435 17.6096L22.5529 26.0002L30.9435 34.3907C31.4642 34.9114 31.4642 35.7556 30.9435 36.2763C30.4228 36.797 29.5785 36.797 29.0578 36.2763L19.7245 26.943C19.2038 26.4223 19.2038 25.5781 19.7245 25.0574L29.0578 15.724C29.5785 15.2033 30.4228 15.2033 30.9435 15.724Z" fill="#A3ACC5" />
+											<path d="M30.9435 15.724C31.4642 16.2447 31.4642 17.0889 30.9435 17.6096L22.5529 26.0002L30.9435 34.3907C31.4642 34.9114 31.4642 35.7556 30.9435 36.2763C30.4228 36.797 29.5785 36.797 29.0578 36.2763L19.7245 26.943C19.2038 26.4223 19.2038 25.5781 19.7245 25.0574L29.0578 15.724C29.5785 15.2033 30.4228 15.2033 30.9435 15.724Z" fill="#A3ACC5" />
 										</svg>
 									</button>
 									<button onClick={() => swiperRef.current?.slideNext()}>
 										<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<rect x="52" y="52" width="52" height="52" rx="12" transform="rotate(180 52 52)" fill="#F9F9F9" />
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M21.0565 36.276C20.5358 35.7553 20.5358 34.9111 21.0565 34.3904L29.4471 25.9998L21.0565 17.6093C20.5358 17.0886 20.5358 16.2444 21.0565 15.7237C21.5772 15.203 22.4215 15.203 22.9422 15.7237L32.2755 25.057C32.7962 25.5777 32.7962 26.4219 32.2755 26.9426L22.9422 36.276C22.4215 36.7967 21.5772 36.7967 21.0565 36.276Z" fill="#A3ACC5" />
+											<path d="M21.0565 36.276C20.5358 35.7553 20.5358 34.9111 21.0565 34.3904L29.4471 25.9998L21.0565 17.6093C20.5358 17.0886 20.5358 16.2444 21.0565 15.7237C21.5772 15.203 22.4215 15.203 22.9422 15.7237L32.2755 25.057C32.7962 25.5777 32.7962 26.4219 32.2755 26.9426L22.9422 36.276C22.4215 36.7967 21.5772 36.7967 21.0565 36.276Z" fill="#A3ACC5" />
 										</svg>
 									</button>
 								</div>
 							</div>
-
-
 							<Swiper
 								id='slider1'
 								modules={[Navigation]}
@@ -640,11 +631,187 @@ export default function Home() {
 									</div>
 								</SwiperSlide>
 							</Swiper>
-
-
 						</div>
 					</div>
+				</section>
+				<section className="section section3">
+					<div className="container">
+						<div className="container__elem container__elem--12">
+							<div className="section3__wr">
+								<div className="skidos">
+									<div className="skidos__top">
+										<span>
+											<img src="img/design/s3zag.jpg" alt="Скидки в нашем телеграм-канале" />
+											<em>до 50%</em>
+										</span>
+									</div>
+									<div className="skidos__text">Раздаем промокоды в Telegram каждую неделю</div>
+									<button className="skidos__but orangeButtonOrange" type='button'>Получить промокод</button>
+								</div>
+								<div className="section3__img">
+									<img src="img/design/telega.svg" alt="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section className="section section4">
+					<div className="container">
+						<div className="container__elem container__elem--12">
+							<div className="section__h2">
+								<img src="img/design/s4zag.jpg" alt="Как работает SMMFlow" />
+							</div>
+							<div className="section4Item">
+								<div className="section4Item__col">
+									<img src="img/design/flow01.jpg" alt="01" />
+								</div>
+								<div className="section4Item__col1">
+									<img src="img/design/flow01zag.jpg" alt="Настройка" />
+								</div>
+								<div className="section4Item__text">Добавьте YouTube-канал, выберите настройки таргетинга: страны, города, возраст, пол, интересы ЦА и удобный недельный бюджет продвижения</div>
+							</div>
+							<div className="section4Item">
+								<div className="section4Item__col section4Item__col--t01">
+									<img src="img/design/flow02.jpg" alt="02" />
+								</div>
+								<div className="section4Item__col1 section4Item__col1--t1">
+									<img src="img/design/flow02zag.jpg" alt="Оплата" />
+								</div>
+								<div className="section4Item__text">Оплатите продвижение любым удобным способом (по карте / Paypal / ЮMoney и др.) Пополняйте баланс кабинета для непрерывного продвижения канала</div>
+							</div>
+							<div className="section4Item section4Item--fix">
+								<div className="section4Item__col section4Item__col--t1">
+									<img src="img/design/flow03.jpg" alt="03" />
+								</div>
+								<div className="section4Item__col1 section4Item__col1--t1">
+									<img src="img/design/flow03zag.jpg" alt="Старт" />
+								</div>
+								<div className="section4Item__text">Продвижение канала начинается на самом YouTube. Видео показывают пользователям, интересующимся Вашей тематикой. Следить за этим процессом можно в личном кабинете</div>
+							</div>
+							<div className="section4Item section4Item--fix1">
+								<div className="section4Item__col section4Item__col--t1">
+									<img src="img/design/flow04.jpg" alt="04" />
+								</div>
+								<div className="section4Item__col1 section4Item__col1--t1">
+									<img src="img/design/flow04zag.jpg" alt="Результат" />
+								</div>
+								<div className="section4Item__text">Вы получаете настоящих заинтересованных подписчиков, лайки и комментарии. В личном кабинете Вы найдете подробную статистику по продвижению</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section className="section section4">
+					<div className="container">
+						<div className="container__elem container__elem--12">
+							<div className="section__h2">
+								<img src="img/design/s5zag.jpg" alt="Преимущества" />
+							</div>
+							<div className="section4__wr">
+								<div className="preim">
+									<div className="preim__block">
+										<span>Пункт 1</span>
+										<span>Пункт 2</span>
+										<span>Пункт 3</span>
+										<span>Пункт 4</span>
+									</div>
+								</div>
+								<div className="section4__wr1">
+									<div className="preim preim--act">
+										<div className="preim__promo">
+											<img src="img/design/logo.svg" alt="" />
+										</div>
+										<div className="preim__block">
+											<span>1-2%</span>
+											<span>95% успеха</span>
+											<span>Высокая</span>
+											<span>{'>'} 1000</span>
+										</div>
+									</div>
+									<div className="preim">
+										<div className="preim__promo">
+											Другие сайты
+										</div>
+										<div className="preim__block">
+											<span>1-2%</span>
+											<span>95% успеха</span>
+											<span>Высокая</span>
+											<span>{'>'} 1000</span>
+										</div>
+									</div>
+									<div className="preim">
+										<div className="preim__promo">
+											Официальная реклама
+										</div>
+										<div className="preim__block">
+											<span>1-2%</span>
+											<span>95% успеха</span>
+											<span>Высокая</span>
+											<span>{'>'} 1000</span>
+										</div>
+									</div>
 
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section className="section section5">
+					<div className="container">
+						<div className="container__elem container__elem--12">
+							<div className="section__h2">
+								<img src="img/design/s6zag.jpg" alt="Частые вопросы" />
+							</div>
+							<Faqs />
+						</div>
+					</div>
+				</section>
+				<section className="section section6">
+					<div className="container">
+						<div className="container__elem container__elem--12">
+							<div className="zakaz">
+								<div className="zakaz__col">
+									<div className="zakaz__title">
+										<img src="img/design/s7zag.jpg" alt="Закажите больше активности в ваших социальных сетях" />
+									</div>
+									<div className="zakaz__button">
+										<button type='button' className='orangeButtonOrange'>Начать продвижение</button>
+									</div>
+								</div>
+								<div className="zakaz__col tr">
+									<div className="zakaz__wr">
+										<div className="zakaz__microCol">
+											<span>
+												<img src="img/design/z1.svg" alt="" />
+											</span>
+											<span>
+												<img src="img/design/z2.svg" alt="" />
+											</span>
+											<span>
+												<img src="img/design/z3.svg" alt="" />
+											</span>
+											<span>
+												<img src="img/design/z4.svg" alt="" />
+											</span>
+										</div>
+										<div className="zakaz__microCol zakaz__microCol--one">
+											<span>
+												<img src="img/design/z1.svg" alt="" />
+											</span>
+											<span>
+												<img src="img/design/z2.svg" alt="" />
+											</span>
+											<span>
+												<img src="img/design/z3.svg" alt="" />
+											</span>
+											<span>
+												<img src="img/design/z4.svg" alt="" />
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</section>
 			</main>
 		</>

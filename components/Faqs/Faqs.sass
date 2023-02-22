@@ -1,0 +1,41 @@
+.faqs
+	.faqItem
+		&:last-of-type
+			margin-bottom: 0
+.faqItem
+	border: 1px solid rgba(224, 224, 224, 0.4)
+	border-radius: 16px
+	margin-bottom: 23px
+	cursor: pointer
+	&__cont
+		display: none
+		color: #676767
+		font-size: 16px
+		padding-left: 26px
+		padding-right: 21px
+		line-height: 29px
+		padding-bottom: 24px
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-left: 26px
+		padding-right: 21px
+		height: 72px
+	&__title
+		font-weight: 600
+		font-size: 19px
+		line-height: 33px
+	&__ico
+		width: 32px
+		height: 32px
+		display: flex
+		transition: .3s
+		align-items: center
+		justify-content: center
+	&.act
+		background: #F9F9F9
+		.faqItem__ico
+			transform: rotate(180deg)
+		.faqItem__cont
+			display: block
