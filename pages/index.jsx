@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import { useState, useRef } from "react"
 import Faqs from '../components/Faqs';
 
-
+/* eslint-disable @next/next/no-img-element */
 
 export default function Home() {
 	const [value, setValue] = useState(null);
@@ -718,7 +718,7 @@ export default function Home() {
 								<div className="section4__wr1">
 									<div className="preim preim--act">
 										<div className="preim__promo">
-											<img src="/img/design/logo.svg" alt="" />
+											<img src="img/design/logo.svg" alt="" />
 										</div>
 										<div className="preim__block">
 											<span>1-2%</span>
