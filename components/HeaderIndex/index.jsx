@@ -22,7 +22,7 @@ const Header = () => {
 	return (
 		<>
 
-			<div className={`${burger ? 'mobileMenu act' : 'mobileMenu'}`}>
+{burger && (	<div className='mobileMenu'>
 				<div className="container">
 					<div className="container__elem container__elem--12">
 						<div className="mobileMenu__top">
@@ -88,7 +88,7 @@ const Header = () => {
 
 
 			</div>
-
+)}
 			<header className={`${scroll ? 'header scrolled' : 'header'}`}>
 				<div className="header__top">
 					<div className="container">
