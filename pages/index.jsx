@@ -209,6 +209,18 @@ export default function Home() {
 								}}
 								onSwiper={(swiper) => console.log(swiper)}
 								onSlideChange={() => console.log('slide change')}
+								breakpoints={{
+									// when window width is >= 640px
+									360: {
+										slidesPerView: 1.1,
+										spaceBetween: 16
+									},
+									// when window width is >= 768px
+									361: {
+										slidesPerView: 3.18,
+										spaceBetween: 24
+									},
+								}}
 							>
 								<SwiperSlide>
 									<div className="slider1Item">
@@ -641,7 +653,8 @@ export default function Home() {
 								<div className="skidos">
 									<div className="skidos__top">
 										<span>
-											<img src="img/design/s3zag.jpg" alt="Скидки в нашем телеграм-канале" />
+											<img src="img/design/s3zag.jpg" alt="Скидки в нашем телеграм-канале" className='skidos__desk' />
+											<img src="img/design/s3zagMob.jpg" alt="Скидки в нашем телеграм-канале" className='skidos__mob' />
 											<em>до 50%</em>
 										</span>
 									</div>
@@ -651,6 +664,9 @@ export default function Home() {
 								<div className="section3__img">
 									<img src="img/design/telega.svg" alt="" />
 								</div>
+								<div className="section3__imgMob">
+									<img src="img/design/telegaMob.svg" alt="" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -659,11 +675,13 @@ export default function Home() {
 					<div className="container">
 						<div className="container__elem container__elem--12">
 							<div className="section__h2">
-								<img src="img/design/s4zag.jpg" alt="Как работает SMMFlow" />
+								<img src="img/design/s4zag.jpg" className='section4__h2desk' alt="Как работает SMMFlow" />
+								<img src="img/design/s4zagMob.jpg" className='section4__h2mob' alt="Как работает SMMFlow" />
 							</div>
 							<div className="section4Item">
 								<div className="section4Item__col">
-									<img src="img/design/flow01.jpg" alt="01" />
+									<img src="img/design/flow01.jpg" className='section4Item__colDesk' alt="01" />
+									<img src="img/design/flow01Mob.jpg" className='section4Item__colMob' alt="01" />
 								</div>
 								<div className="section4Item__col1">
 									<img src="img/design/flow01zag.jpg" alt="Настройка" />
@@ -672,16 +690,18 @@ export default function Home() {
 							</div>
 							<div className="section4Item">
 								<div className="section4Item__col section4Item__col--t01">
-									<img src="img/design/flow02.jpg" alt="02" />
+									<img src="img/design/flow02.jpg" className='section4Item__colDesk' alt="02" />
+									<img src="img/design/flow02Mob.jpg" className='section4Item__colMob' alt="02" />
 								</div>
 								<div className="section4Item__col1 section4Item__col1--t1">
 									<img src="img/design/flow02zag.jpg" alt="Оплата" />
 								</div>
-								<div className="section4Item__text">Оплатите продвижение любым удобным способом (по карте / Paypal / ЮMoney и др.) Пополняйте баланс кабинета для непрерывного продвижения канала</div>
+								<div className="section4Item__text section4Item__text--ll">Оплатите продвижение любым удобным способом (по карте / Paypal / ЮMoney и др.) Пополняйте баланс кабинета для непрерывного продвижения канала</div>
 							</div>
 							<div className="section4Item section4Item--fix">
 								<div className="section4Item__col section4Item__col--t1">
-									<img src="img/design/flow03.jpg" alt="03" />
+									<img src="img/design/flow03.jpg" className='section4Item__colDesk' alt="03" />
+									<img src="img/design/flow03Mob.jpg" className='section4Item__colMob' alt="03" />
 								</div>
 								<div className="section4Item__col1 section4Item__col1--t1">
 									<img src="img/design/flow03zag.jpg" alt="Старт" />
@@ -690,7 +710,8 @@ export default function Home() {
 							</div>
 							<div className="section4Item section4Item--fix1">
 								<div className="section4Item__col section4Item__col--t1">
-									<img src="img/design/flow04.jpg" alt="04" />
+									<img src="img/design/flow04.jpg" className='section4Item__colDesk' alt="04" />
+									<img src="img/design/flow04Mob.jpg" className='section4Item__colMob' alt="04" />
 								</div>
 								<div className="section4Item__col1 section4Item__col1--t1">
 									<img src="img/design/flow04zag.jpg" alt="Результат" />
@@ -700,7 +721,7 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<section className="section section4">
+				<section className="section section4 section44">
 					<div className="container">
 						<div className="container__elem container__elem--12">
 							<div className="section__h2">
@@ -771,7 +792,8 @@ export default function Home() {
 							<div className="zakaz">
 								<div className="zakaz__col">
 									<div className="zakaz__title">
-										<img src="img/design/s7zag.jpg" alt="Закажите больше активности в ваших социальных сетях" />
+										<img src="img/design/s7zag.jpg" className='zakaz__zagDesk' alt="Закажите больше активности в ваших социальных сетях" />
+										<img src="img/design/s7zagMob.jpg" className='zakaz__zagMob' alt="Закажите больше активности в ваших социальных сетях" />
 									</div>
 									<div className="zakaz__button">
 										<button type='button' className='orangeButtonOrange'>Начать продвижение</button>

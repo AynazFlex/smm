@@ -2,17 +2,34 @@
 @import 'incl'
 .section1
 	margin-top: -87px
+	@include breakpoint (xs)
+		margin-top: -90px
 	&__wr
 		padding: 32px
 		box-shadow: 0px 4px 35px 12px rgba(0, 0, 0, 0.04)
 		border-radius: 32px
+		@include breakpoint (xs)
+			box-shadow: none
+			padding: 0
+		.section__h2
+			@include breakpoint (xs)
+				width: 235px
+				line-height: 36px
+				height: 36px
+				margin-bottom: 29px
 	&__wrap
 		display: flex
 		justify-content: space-between
 		@include breakpoint (xs)
 			flex-direction: column
+		.section1Items
+			+ .section1Items
+				@include breakpoint (xs)
+					display: none
 .section
 	padding-top: 143px
+	@include breakpoint (xs)
+		padding-top: 0
 	&__h2
 		font-weight: 600
 		font-size: 36px
@@ -68,6 +85,9 @@
 		line-height: 29px
 		color: #676767
 		margin-bottom: 24px
+		@include breakpoint (xs)
+			font-size: 14px
+			position: relative
 .section1Item
 	display: flex
 	align-items: center
@@ -79,6 +99,12 @@
 	margin-bottom: 24px
 	padding: 0px 12px
 	border: 2px solid transparent
+	@include breakpoint (xs)
+		width: 152px
+		height: auto
+		padding: 12px
+		flex-direction: column
+		align-items: center
 	&:hover
 		border: 2px solid $accent
 		color: $accent
@@ -90,10 +116,21 @@
 		display: flex
 		align-items: center
 		margin-right: 20px
+		@include breakpoint (xs)
+			margin-right: 0px
+			margin-bottom: 10px
+			width: 50px
+			left: 4px
+			top: -22px
+			position: relative
+			height: 50px
 	&__txt
 		font-weight: 600
 		font-size: 18px
 		line-height: 24px
+		@include breakpoint (xs)
+			font-size: 14px
+			margin-top: -31px
 .section1Itemstep1
 .checkbox_vib
 	display: flex
@@ -154,14 +191,21 @@
 .section2
 	overflow: hidden
 	padding-bottom: 50px
+	@include breakpoint (xs)
+		padding-top: 33px
 	&__sliderNav
 		display: flex
 		align-items: center
 		justify-content: space-between
 		width: 128px
+		@include breakpoint (xs)
+			display: none
 	.section__h2
 		display: flex
 		justify-content: space-between
+		@include breakpoint (xs)
+			width: 271px
+			margin-bottom: 22px
 	#slider1
 		overflow: visible
 .slider1Item
@@ -169,6 +213,8 @@
 	border-radius: 16px
 	background: #fff
 	padding: 16px
+	@include breakpoint (xs)
+		padding: 12px
 	&__wr
 		display: flex
 		align-items: center
@@ -181,6 +227,8 @@
 		font-size: 16px
 		line-height: 24px
 		margin-bottom: 4px
+		@include breakpoint (xs)
+			font-size: 14px
 	&__ico
 		width: 46px
 		height: 46px
@@ -205,13 +253,23 @@
 		font-size: 16px
 		line-height: 29px
 		color: #676767
+		@include breakpoint (xs)
+			padding: 12px
+			font-size: 14px
+			line-height: 24px
+			margin-bottom: 17px
 .section3
 	padding-top: 93px
+	@include breakpoint (xs)
+		padding-top: 20px
 	&__wr
 		background: #F9F9F9
 		border-radius: 32px
 		display: flex
 		padding: 83px 64px 0
+		@include breakpoint (xs)
+			padding: 20px
+			flex-direction: column-reverse
 	&__img
 		display: flex
 		align-items: center
@@ -219,12 +277,32 @@
 		top: -47px
 		height: 339px
 		left: 34px
+		@include breakpoint (xs)
+			display: none
+	&__imgMob
+		display: none
+		position: relative
+		left: -20px
+		top: -21px
+		@include breakpoint (xs)
+			display: block
+		img
+			max-width: initial
 .skidos
+	&__desk
+		@include breakpoint (xs)
+			display: none
+	&__mob
+		display: none
+		@include breakpoint (xs)
+			display: block
 	&__top
 		span
 			display: flex
 			align-items: center
 			position: relative
+			@include breakpoint (xs)
+				margin-top: 18px
 			img
 				mix-blend-mode: multiply
 			em
@@ -240,27 +318,54 @@
 				left: 202px
 				top: -16px
 				@include breakpoint (xs)
-					left: 0
+					left: 134px
+					font-weight: 600
+					background: none
+					top: -8px
+					font-size: 29px
+					padding: 0
 	&__text
 		margin-top: 40px
 		font-size: 16px
 		line-height: 29px
 		color: #676767
+		@include breakpoint (xs)
+			margin-top: 27px
+			font-size: 15px
+			line-height: 26px
 	&__but
 		&.orangeButtonOrange
 			padding: 19px 39px
 			margin-left: 0
 			margin-top: 40px
+			@include breakpoint (xs)
+				padding: 16px 29px
+				margin-top: 21px
 .section4
+	@include breakpoint (xs)
+		padding-top: 68px
+	.section__h2
+		@include breakpoint (xs)
+			margin-bottom: 41px
 	img
 		mix-blend-mode: multiply
+	&__h2desk
+		@include breakpoint (xs)
+			display: none
+	&__h2mob
+		display: none
+		@include breakpoint (xs)
+			display: flex
 	&__wr
 		display: flex
 		@include breakpoint (xs)
-			flex-direction: column
+			flex-direction: column-reverse
 		.preim
 			padding: 24px 24px 24px 0
 			margin-right: 153px
+		> .preim
+			@include breakpoint (xs)
+				display: none
 	&__wr1
 		display: flex
 		@include breakpoint (xs)
@@ -269,7 +374,13 @@
 			min-width: 308px
 			padding: 24px
 			margin-right: 24px
-			background: #F9F9F9			
+			background: #F9F9F9	
+			@include breakpoint (xs)
+				margin-right: 0
+				min-width: 100%
+			&:last-of-type
+				@include breakpoint (xs)
+					margin-bottom: 0
 			&--act
 				background: $accent
 				box-shadow: 0px 12px 40px rgba(255, 119, 45, 0.2)
@@ -291,24 +402,57 @@
 	box-shadow: 0px 4px 35px 12px rgba(0, 0, 0, 0.04)
 	border-radius: 24px
 	margin-bottom: 24px
+	@include breakpoint (xs)
+		align-items: flex-start
+		padding: 26px 25px 20px
+		flex-direction: column
+		margin-bottom: 17px
+		position: relative
+	&__colDesk
+		@include breakpoint (xs)
+			display: none
+	&__colMob
+		display: none
+		@include breakpoint (xs)
+			display: flex
 	&__col
 		position: relative
 		bottom: -28px
 		left: 42px
 		margin-right: 169px
+		@include breakpoint (xs)
+			position: absolute
+			bottom: initial
+			left: initial
+			right: 20px
+			top: 24px
+			margin-right: 0
 		&--t01
 			bottom: -31px
 			left: 33px
+			@include breakpoint (xs)
+				bottom: initial
+				left: initial
 		&--t1
 			bottom: -44px
 			left: 33px
+			@include breakpoint (xs)
+				bottom: initial
+				left: initial
 	&__col1
 		display: flex
 		align-items: center
 		height: 100%
+		@include breakpoint (xs)
+			width: 142px
+			height: 30px
+			margin-bottom: 15px
 		&--t1
 			position: relative
 			left: -56px
+			@include breakpoint (xs)
+				left: 0
+				width: 96px
 	&__text
 		color: #676767
 		font-size: 16px
@@ -316,17 +460,52 @@
 		max-width: 467px
 		margin-left: auto
 		width: 100%
+		@include breakpoint (xs)
+			font-size: 14px
+			line-height: 24px
+			overflow: hidden
+			height: 100px
+		&--ll
+			@include breakpoint (xs)
+				height: 121px
 	&--fix
 		padding: 33px 32px
+		@include breakpoint (xs)
+			padding: 26px 25px 20px
+		.section4Item__col1--t1
+			@include breakpoint (xs)
+				width: 79px
+		.section4Item__text
+			@include breakpoint (xs)
+				height: 122px
 	&--fix1
 		padding: 33px 32px
 		margin-bottom: 0
+		@include breakpoint (xs)
+			padding: 26px 25px 20px
+		.section4Item__col1--t1
+			@include breakpoint (xs)
+				width: 128px
+		.section4Item__text
+			@include breakpoint (xs)
+				height: 122px
+.section44
+	@include breakpoint (xs)
+		padding-top: 89px
+	.section__h2
+		@include breakpoint (xs)
+			width: 238px
+			height: 36px
+			margin-bottom: 30px
 .preim
 	padding: 24px
 	height: 409px
 	display: flex
 	border-radius: 24px
 	flex-direction: column
+	@include breakpoint (xs)
+		height: auto
+		margin-bottom: 16px
 	&__block
 		margin-top: auto
 		height: 236px
@@ -334,6 +513,10 @@
 		align-items: center
 		justify-content: space-between
 		flex-direction: column
+		@include breakpoint (xs)
+			height: 132px
+			margin-top: 18px
+			align-items: flex-start
 		span
 			font-weight: 700
 			white-space: nowrap
@@ -352,6 +535,11 @@
 		padding: 24.5px 14px
 		box-shadow: 0px 4px 35px 12px rgba(0, 0, 0, 0.04)
 		border-radius: 16px
+		@include breakpoint (xs)
+			justify-content: flex-start
+			margin: 0
+			min-width: initial
+			max-width: 154px
 .zakaz
 	padding: 75px 64px
 	overflow: hidden
@@ -359,32 +547,59 @@
 	height: 336px
 	background: #F9F9F9
 	border-radius: 32px
+	@include breakpoint (xs)
+		padding: 24px
+		height: 393px
+		flex-direction: column-reverse
 	&__title
 		display: flex
 		align-items: center
 		img
 			mix-blend-mode: multiply
+	&__zagDesk
+		@include breakpoint (xs)
+			display: none
+	&__zagMob
+		display: none
+		@include breakpoint (xs)
+			display: flex
 	&__button
 		margin-top: 49px
+		@include breakpoint (xs)
+			margin-top: 24px
 		button
 			margin-left: 0
 			padding: 19px 42px
+			@include breakpoint (xs)
+				width: 100%
 	&__wr
 		display: flex
 		position: relative
 		top: -114px
+		@include breakpoint (xs)
+			transform: rotate(90deg)
+			top: 135px
+			margin-bottom: 7px
 	&__col
 		&:not(.tr)
 			margin-right: 119px
+			@include breakpoint (xs)
+				margin-right: 0
 	&__microCol
 		display: flex
 		margin-right: 28px
 		flex-direction: column
 		animation: 4s linear 0s infinite alternate animating-multiple-properties
+		@include breakpoint (xs)
+			margin-right: 17px
 		span
 			display: flex
 			align-items: center
 			margin-bottom: 29px
+			@include breakpoint (xs)
+				width: 54px
+				height: 54px
+				margin-bottom: 17px
 		&--one
 			animation: 4s linear 0s infinite alternate animating-multiple-properties1
 @keyframes animating-multiple-properties
@@ -397,4 +612,14 @@
 		transform: translateY(50%)
 	to 
 		transform: translateY(-50%)
+.section5
+	@include breakpoint (xs)
+		padding-top: 49px
+	.section__h2
+		@include breakpoint (xs)
+			width: 254px
+			margin-bottom: 21px
+.section6
+	@include breakpoint (xs)
+		padding-top: 56px
 @import "media"
