@@ -4,6 +4,8 @@
 	border-radius: 0px 0px 72px 72px
 	height: 818px
 	position: relative
+	@include breakpoint (xs)
+		background: url(/img/design/headr_mob.jpg) no-repeat center top
 	&:after
 		content: ''
 		position: absolute
@@ -14,6 +16,15 @@
 		margin: 0 auto
 		height: 62px
 		background: url(/img/design/tochka.png) no-repeat center bottom
+		@include breakpoint (xs)
+			display: none
+	&__utp1desk
+		@include breakpoint (xs)
+			display: none
+	&__utp1mob
+		display: none
+		@include breakpoint (xs)
+			display: flex
 	&__utpBox
 		height: 416px
 		display: flex
@@ -23,10 +34,14 @@
 		justify-content: space-between
 		align-items: center
 		margin: 217px 0 98px
+		@include breakpoint (xs)
+			margin: 125px 0 0
 	&__Box
 		width: 609px
 		height: 100%
 		margin: 0 auto
+		@include breakpoint (xs)
+			width: 100%
 	&__utp
 		margin-bottom: 40px
 		span
@@ -35,15 +50,26 @@
 			text-align: center
 			display: flex
 			margin-bottom: 41px
+			@include breakpoint (xs)
+				width: 338px
+				line-height: 24px
+				margin: 0 auto
+				margin-bottom: 29px
 		.orangeButtonOrange
 			max-width: 250px
 			margin: 0 auto
 			font-size: 16px
 			padding: 19px 18px
+			@include breakpoint (xs)
+				max-width: 326px
+				padding: 15px 18px
 	&__utp1
 		display: flex
 		align-items: center
 		margin-bottom: 24px
+		@include breakpoint (xs)
+			justify-content: center
+			margin-bottom: 28px
 		img
 			max-width: initial
 .stars
@@ -52,6 +78,8 @@
 	justify-content: center
 	margin-top: 39px
 	margin-bottom: 3px
+	@include breakpoint (xs)
+		margin-top: 26px
 	&__wr
 		width: 100px
 		display: flex

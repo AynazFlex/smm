@@ -9,12 +9,94 @@
 	&.scrolled
 		background: #fff
 		box-shadow: 0px 4px 35px 12px rgba(0, 0, 0, 0.04)
+		@include breakpoint (xs)
+			height: 64px
 	&__menu
 		a
 			line-height: 26px
 			margin: 0 14px
 			&:hover
 				text-decoration: underline
+	&__top
+		height: 100%
+		@include breakpoint (xs)
+			display: none
+	&__mobile
+		display: none
+		height: 64px
+		@include breakpoint (xs)
+			display: block
+.mobileMenu
+	display: none
+	position: fixed
+	background: #fff
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 3
+	&.act
+		display: block
+		overflow-y: auto
+	&__close
+		margin-left: auto
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 40px
+		height: 40px
+		border-radius: 55px
+		background: #F9F9F9
+	&__top
+		display: flex
+		height: 64px
+		align-items: center
+		.logo
+			height: 18px
+			width: 100px
+	&__bottom
+		margin-top: 20px
+		nav
+			display: flex
+			flex-direction: column
+			margin-bottom: 32px
+			a
+				display: flex
+				align-items: center
+				margin-bottom: 24px
+				&:last-of-type
+					margin-bottom: 0
+		.orangeButtonOrange
+			margin-left: 0
+			margin-bottom: 20px
+		.helper
+			margin-top: 100px
+			background: #F9F9F9
+			margin-bottom: 16px
+.headMob
+	height: 100%
+	display: flex
+	align-items: center
+	.logo
+		height: 18px
+		width: 100px
+	&__wr
+		margin-left: auto
+		display: flex
+		align-items: center
+	&__zakaz
+		color: #FF772D
+		font-size: 14px
+		line-height: 20px
+.burger
+	margin-left: 20px
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 40px
+	height: 40px
+	border-radius: 55px
+	background: #F9F9F9
 .headerButtons
 	display: flex
 .orangeButton

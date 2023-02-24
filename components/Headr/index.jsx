@@ -8,7 +8,8 @@ const Headr = () => {
 				<div className='headr__Box'>
 					<div className='headr__utp'>
 						<div className='headr__utp1'>
-							<img src="img/design/utp.png" alt="Продвижение во всех соцсетях за пару кликов" />
+							<img src="img/design/utp.png" className='headr__utp1desk' alt="Продвижение во всех соцсетях за пару кликов" />
+							<img src="img/design/utp_mob.png" className='headr__utp1mob' alt="Продвижение во всех соцсетях за пару кликов" />
 						</div>
 						<span>Получайте подписчиков, лайки, репосты, просмотры, прослушивания и любую другую активность на свои профили в социальных сетях по самым низким ценам на рынке и в самые быстрые сроки!</span>
 						<a href="#" className='orangeButtonOrange'>Начать продвижение</a>

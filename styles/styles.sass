@@ -9,6 +9,8 @@
 	&__wrap
 		display: flex
 		justify-content: space-between
+		@include breakpoint (xs)
+			flex-direction: column
 .section
 	padding-top: 143px
 	&__h2
@@ -33,6 +35,9 @@
 		width: 394px
 		height: 277px
 		background: url(/img/design/people.svg) no-repeat right bottom
+		@include breakpoint (xs)
+			width: auto
+			margin: 0
 	&__wr
 		display: flex
 		flex-wrap: wrap
@@ -234,6 +239,8 @@
 				position: absolute
 				left: 202px
 				top: -16px
+				@include breakpoint (xs)
+					left: 0
 	&__text
 		margin-top: 40px
 		font-size: 16px
@@ -249,11 +256,15 @@
 		mix-blend-mode: multiply
 	&__wr
 		display: flex
+		@include breakpoint (xs)
+			flex-direction: column
 		.preim
 			padding: 24px 24px 24px 0
 			margin-right: 153px
 	&__wr1
 		display: flex
+		@include breakpoint (xs)
+			flex-direction: column
 		.preim
 			min-width: 308px
 			padding: 24px
