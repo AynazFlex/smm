@@ -126,12 +126,73 @@
 		background: #fff
 		border: 1px solid #FF772D
 .menu
+	display: flex
+	align-items: center
+	height: 100%
 	a
-		line-height: 26px
+		height: 100%
+		display: flex
+		align-items: center
 		margin: 0 14px
-		&:hover
-			text-decoration: underline
+		border-bottom: 4px solid transparent
+	&__services
+		&.act
+			color: $accent
+			border-bottom: 4px solid $accent
 .logo
 	display: flex
 	align-items: center
 	margin-right: 18px
+.servicePodmenu
+	padding: 24px 0
+	position: fixed
+	width: 100%
+	left: 0
+	top: 92px
+	z-index: 20
+	background: #fff
+	height: 786px
+	border-radius: 0px 0px 72px 72px
+	box-shadow: 0px 4px 35px 12px rgb(0 0 0 / 4%)
+	&__wr
+		display: flex
+		flex-wrap: wrap
+		.servicePodmenuItem
+			&:nth-child(5n)
+				margin-right: 0
+.servicePodmenuItem
+	width: 220px
+	display: flex
+	background: #F9F9F9
+	margin-right: 24px
+	padding: 16px
+	border-radius: 16px
+	flex-direction: column
+	margin-bottom: 24px
+	&__title
+		display: flex
+		align-items: center
+		margin-bottom: 16px
+		i
+			font-style: normal
+			width: 24px
+			height: 24px
+			display: flex
+			align-items: center
+			justify-content: center
+			margin-right: 12px
+		span
+			font-size: 16px
+			font-weight: 600
+	nav
+		display: flex
+		flex-direction: column
+		a
+			font-size: 14px
+			line-height: 24px
+			height: 26px
+			margin-bottom: 6px
+			&:hover
+				color: $accent
+			&:last-of-type
+				margin-bottom: 0
