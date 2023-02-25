@@ -91,7 +91,7 @@ const Header = () => {
 			</div>
 			)}
 			{podmenu && (
-				<div className="servicePodmenu">
+				<div onMouseLeave={() => setPodmenu(false)} onMouseEnter={setPodmenu} className="servicePodmenu">
 					<div className="container">
 						<div className="container__elem container__elem--12">
 							<div className="servicePodmenu__wr">
