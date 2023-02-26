@@ -154,12 +154,36 @@
 	height: 786px
 	border-radius: 0px 0px 72px 72px
 	box-shadow: 0px 4px 35px 12px rgb(0 0 0 / 4%)
+	@include breakpoint (xs)
+		top: 0
+		height: 100%
+		box-shadow: none
+		padding: 0
+		border-radius: 0
+	&__topMob
+		display: none
+		height: 64px
+		align-items: center
+		justify-content: space-between
+		margin-bottom: 20px
+		@include breakpoint (xs)
+			display: flex
 	&__wr
 		display: flex
 		flex-wrap: wrap
+		@include breakpoint (xs)
+			justify-content: center
 		.servicePodmenuItem
 			&:nth-child(5n)
 				margin-right: 0
+.sprev, .sclose
+	width: 40px
+	height: 40px
+	display: flex
+	align-items: center
+	justify-content: center
+	border-radius: 100%
+	background: #F9F9F9
 .servicePodmenuItem
 	width: 220px
 	display: flex
@@ -169,10 +193,36 @@
 	border-radius: 16px
 	flex-direction: column
 	margin-bottom: 24px
+	@include breakpoint (xs)
+		width: 100%
+		margin-right: 0
+		padding: 18px 16px
+		margin-bottom: 16px
+	&__cont
+		@include breakpoint (xs)
+			padding-top: 16px
+			display: none
+		&.act
+			display: block
+	&__top
+		@include breakpoint (xs)
+			display: flex
+			align-items: center
+			justify-content: space-between
+		button
+			display: none
+			align-items: center
+			justify-content: center
+			width: 24px
+			height: 24px
+			@include breakpoint (xs)
+				display: flex
 	&__title
 		display: flex
 		align-items: center
 		margin-bottom: 16px
+		@include breakpoint (xs)
+			margin-bottom: 0
 		i
 			font-style: normal
 			width: 24px
