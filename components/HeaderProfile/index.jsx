@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { useState, useEffect } from "react";
-import './HeaderIndex.sass';
+import '../HeaderIndex/HeaderIndex.sass';
+import './HeaderProfile.sass';
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 
-const HeaderIndex = () => {
+const HeaderProfile = () => {
 	const [scroll, setScroll] = useState(false)
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
@@ -102,9 +103,6 @@ const HeaderIndex = () => {
 						</div>
 					</div>
 				</div>
-
-
-
 			</div>
 			)}
 			{podmenu && (
@@ -379,9 +377,9 @@ const HeaderIndex = () => {
 							</nav>
 						</div>
 						<div className="container__elem container__elem--4 container__elem--df container__elem--aic container__elem--jcfend">
-							<div className='headerButtons'>
-								<Link href='/profile' className='orangeButton'>Войти</Link>
-								<a href="#" className='orangeButtonOrange'>Быстрый заказ</a>
+							<div className='headerButtons headerButtons--profile'>
+								<a className='orangeButtonOrange'>Быстрый заказ</a>
+								213
 							</div>
 						</div>
 					</div>
@@ -409,7 +407,7 @@ const HeaderIndex = () => {
 				</div>
 			</header>
 		</>
-	)
-}
+	);
+};
 
-export default HeaderIndex;
+export default HeaderProfile;
