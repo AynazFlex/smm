@@ -1,9 +1,13 @@
 import HeaderProfile from "../../components/HeaderProfile";
 import './Profile.sass';
+import { useState } from "react";
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
+import Zakazi from "./Zakazi";
 
 export default function Profile() {
+	const [block, setBlock] = useState("zakaz")
+
 	return (
 		<>
 			<HeaderProfile />
@@ -33,7 +37,7 @@ export default function Profile() {
 								</div>
 								<div className="zakazi__right">
 									<div className="zakaziTabs">
-										<button type="button" className="zakaziTab active">
+										<button onClick={() => setBlock('zakaz')} type="button" className={`zakaziTab${block === 'zakaz' ? ' active' : ''}`}>
 											<div className="zakaziTab__ico">
 												<svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
 													<g clipPath="url(#clip0_1317_4203)">
@@ -53,7 +57,7 @@ export default function Profile() {
 											</div>
 											<div className="zakaziTab__txt">Заказы</div>
 										</button>
-										<button type="button" className="zakaziTab">
+										<button onClick={() => setBlock('history')} type="button" className={`zakaziTab${block === 'history' ? ' active' : ''}`}>
 											<div className="zakaziTab__ico">
 												<svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
 													<path d="M12 10.25C10.7574 10.25 9.75 11.2574 9.75 12.5C9.75 13.7426 10.7574 14.75 12 14.75C13.2426 14.75 14.25 13.7426 14.25 12.5C14.25 11.2574 13.2426 10.25 12 10.25ZM8.25 12.5C8.25 10.4289 9.92893 8.75 12 8.75C14.0711 8.75 15.75 10.4289 15.75 12.5C15.75 14.5711 14.0711 16.25 12 16.25C9.92893 16.25 8.25 14.5711 8.25 12.5Z" fill="#B0B0B0" />
@@ -64,7 +68,7 @@ export default function Profile() {
 											</div>
 											<div className="zakaziTab__txt">История пополнений</div>
 										</button>
-										<button type="button" className="zakaziTab">
+										<button onClick={() => setBlock('settings')} type="button" className={`zakaziTab${block === 'settings' ? ' active' : ''}`}>
 											<div className="zakaziTab__ico">
 												<svg width="24" height="25" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
 													<path d="M18.0176 5.5C17.7571 5.5 17.5072 5.6035 17.323 5.78773L6.42506 16.6856C6.04059 17.0701 5.76783 17.5519 5.63596 18.0794L5.37439 19.1256L6.42066 18.8641C6.94816 18.7322 7.4299 18.4594 7.81437 18.075L18.7123 7.17704C18.8035 7.08582 18.8759 6.97752 18.9252 6.85833C18.9746 6.73915 19 6.6114 19 6.48239C19 6.35338 18.9746 6.22563 18.9252 6.10645C18.8759 5.98726 18.8035 5.87896 18.7123 5.78773C18.6211 5.69651 18.5128 5.62415 18.3936 5.57478C18.2744 5.52541 18.1466 5.5 18.0176 5.5ZM15.9088 4.37352C16.4681 3.81421 17.2267 3.5 18.0176 3.5C18.4093 3.5 18.7971 3.57714 19.1589 3.72702C19.5208 3.8769 19.8496 4.09658 20.1265 4.37352C20.4034 4.65046 20.6231 4.97924 20.773 5.34108C20.9229 5.70292 21 6.09074 21 6.48239C21 6.87404 20.9229 7.26186 20.773 7.6237C20.6231 7.98554 20.4034 8.31432 20.1265 8.59126L9.22859 19.4892C8.58779 20.13 7.78489 20.5846 6.90573 20.8043L4.24256 21.4701C3.90178 21.5553 3.54129 21.4555 3.29291 21.2071C3.04453 20.9587 2.94468 20.5982 3.02988 20.2575L3.69567 17.5943C3.91546 16.7151 4.37006 15.9122 5.01085 15.2714L15.9088 4.37352Z" fill="#B0B0B0" />
@@ -81,236 +85,9 @@ export default function Profile() {
 					</div>
 					<div className="zakazi__bottom">
 						<div className="container">
-							<div className="container__elem container__elem--12">
-								<h1>
-									<img src="img/design/h1zakazi.jpg" alt="Заказы" />
-								</h1>
-								<div className="tableZakazi">
-									<div className="tableZakazi__row">
-										<div className="tableZakazi__th tableZakazi__th--1">Дата</div>
-										<div className="tableZakazi__th tableZakazi__th--2">Услуга</div>
-										<div className="tableZakazi__th tableZakazi__th--3">Кол-во</div>
-										<div className="tableZakazi__th tableZakazi__th--4">Цена</div>
-										<div className="tableZakazi__th">Статус</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--green">
-												Завершён
-											</div>
-										</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--yellow">
-												Выполнен частично
-											</div>
-										</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--blue">
-												Выполняется
-											</div>
-										</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--orange">
-												В обработке
-											</div>
-										</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--red">
-												Отменён
-											</div>
-										</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--red">
-												Отменён
-											</div>
-										</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--red">
-												Отменён
-											</div>
-										</div>
-									</div>
-									<div className="tableZakazi__row tableZakazi__row--gray">
-										<div className="tableZakazi__tr tableZakazi__tr--1">
-											11.12.2022
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--2">
-											<div className="tableZakazi__usl">
-												<div className="tableZakazi__ico">
-													<img src="img/design/inst.jpg" alt="" />
-												</div>
-												<div className="tableZakazi__wr">
-													<span>Подписчики “Живые ❤️”</span>
-													<a>https://www.instagram.com/durov/</a>
-												</div>
-											</div>
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--3">
-											10 000
-										</div>
-										<div className="tableZakazi__tr tableZakazi__tr--4">
-											1 000₽
-										</div>
-										<div className="tableZakazi__tr">
-											<div className="tableZakazi__status tableZakazi__status--red">
-												Отменён
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							{block === 'zakaz' && <Zakazi />}
+							{block === 'history' && <div>История</div>}
+							{block === 'settings' && <div>Сменить пароль</div>}
 						</div>
 					</div>
 				</section>
