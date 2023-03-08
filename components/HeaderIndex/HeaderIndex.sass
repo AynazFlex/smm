@@ -109,6 +109,21 @@
 	&:hover
 		background: #FF772D
 		color: #fff
+.balanceButton
+	display: flex
+	align-items: center
+	padding: 12px 20px
+	gap: 12px
+	background: #F9F9F9
+	border-radius: 16px
+	margin-left: 16px
+	color: #212121
+	font-weight: 700
+	font-size: 16px
+	line-height: 160%
+	width: 165px
+	&:hover
+		box-shadow: 0px 12px 40px rgba(255, 119, 45, 0.2)
 .orangeButtonOrange
 	background: #FF772D
 	display: flex
@@ -121,10 +136,22 @@
 	border: 1px solid transparent
 	box-shadow: 0px 12px 40px rgba(255, 119, 45, 0.2)
 	margin-left: 16px
+	min-width: 154px
 	&:hover
 		color: #FF772D
 		background: #fff
 		border: 1px solid #FF772D
+.cabinetButton
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 52px
+	height: 52px
+	background: #F9F9F9
+	border-radius: 100%
+	margin-left: 16px
+	&:hover
+		box-shadow: 0px 12px 40px rgba(255, 119, 45, 0.2)
 .menu
 	display: flex
 	align-items: center
@@ -151,7 +178,9 @@
 	top: 92px
 	z-index: 20
 	background: #fff
-	height: 786px
+	height: calc( 100vh - 92px )
+	max-height: 786px
+	overflow-y: auto
 	border-radius: 0px 0px 72px 72px
 	box-shadow: 0px 4px 35px 12px rgb(0 0 0 / 4%)
 	@include breakpoint (xs)
@@ -209,6 +238,9 @@
 			display: flex
 			align-items: center
 			justify-content: space-between
+		.button__act
+			transform: rotate(180deg)
+			transition: .3s
 		button
 			display: none
 			align-items: center

@@ -24,11 +24,11 @@
 		display: flex
 		justify-content: space-between
 		@include breakpoint (xs)
-			flex-direction: column
-		.section1Items
-			+ .section1Items
-				@include breakpoint (xs)
-					display: none
+			display: none
+	&__wrap-mobile
+		display: none
+		@include breakpoint (xs)
+			display: block
 .section
 	padding-top: 143px
 	@include breakpoint (xs)
@@ -72,11 +72,23 @@
 				margin-right: 0
 	&__wr1
 		display: flex
+		justify-content: space-between
 		margin-top: auto
+		.buttonBack
+			display: block
+			padding: 18px 20px
+			width: 64px
+			height: 52px
+			background: #F9F9F9
+			border-radius: 16px
 		.orangeButtonOrange
 			height: 72px
 			width: 100%
 			margin-left: 0
+			@include breakpoint (xs)
+				padding: 18px 32px
+				width: 247px
+				height: 52px
 			&[disabled]
 				background: #E0E0E0
 				box-shadow: none
@@ -108,13 +120,15 @@
 		padding: 12px
 		flex-direction: column
 		align-items: center
-	&:hover
+	&--act
 		border: 2px solid $accent
 		color: $accent
 	&--full
 		width: 100%
 		margin-right: 0
 		margin-bottom: 0
+		@include breakpoint (xs)
+			width: 152px
 	&__ico
 		display: flex
 		align-items: center
