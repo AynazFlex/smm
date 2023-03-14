@@ -13,7 +13,7 @@ export default function FormWrap({setClose}) {
         const close = (e) => e.target.closest(`.${form.form}`) || setClose();
     
         wrapper.current.addEventListener("click", close);
-    }, []);
+    }, [wrapper]);
 
     return (
         <div ref={wrapper} className={form.wrapper}>

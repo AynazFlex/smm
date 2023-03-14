@@ -25,9 +25,9 @@ const HeaderIndex = () => {
   useEffect(() => {
     const body = document.querySelector("body");
     if (body) {
-      body.style.overflow = burger || login ? "hidden" : "";
+      body.style.overflow = burger || login || balance ? "hidden" : "";
     }
-  }, [burger, login]);
+  }, [burger, login, balance]);
 
   return (
     <>
@@ -134,7 +134,7 @@ const HeaderIndex = () => {
           </div>
         </div>
       )}
-      {podmenu && <PodMenu setPodmenu={setPodmenu}/>}
+      {podmenu && <PodMenu setPodmenu={setPodmenu} setBurger={setBurger}/>}
       <header className={scroll ? "header scrolled" : "header"}>
         <div className="header__top">
           <div className={isAuth ? "container container--jcsb" : "container"}>

@@ -8,6 +8,7 @@ export default function AddBalance({ setClose }) {
   const wrapper = useRef(null);
   const [amount, setAmount] = useState("");
   const [method, setMethod] = useState(1);
+  const [err, setErr] = useState("");
   const { success, error, msg, url, isPending } = useSelector(
     (state) => state.api
   );
@@ -18,19 +19,20 @@ export default function AddBalance({ setClose }) {
     const close = (e) => e.target.closest(`.${form.form}`) || setClose();
 
     wrapper.current.addEventListener("click", close);
+
+    return () => dispatch(reset());
   }, []);
 
   useEffect(() => {
     if (success) {
       router.push(url);
-      dispatch(reset());
       setClose();
     }
   }, [success]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(balanceTopUp(amount, method));
+    +amount >= 15 ? dispatch(balanceTopUp(amount, method)) : setErr("Минимум 15 ₽");
   };
 
   return (
@@ -64,14 +66,15 @@ export default function AddBalance({ setClose }) {
           <input
             className={form.form__mt12px}
             value={amount}
-            onChange={(e) =>
+            onChange={(e) => {
               setAmount(
                 e.target.value
                   .split("")
                   .filter((item) => "0123456789".includes(item))
                   .join("")
               )
-            }
+              !!err && setErr("")
+            }}
           />
           <span className={form.warning}>Минимум 15 ₽</span>
         </label>
@@ -228,7 +231,7 @@ export default function AddBalance({ setClose }) {
           disabled={!(amount && method) || isPending}
           type="submit"
         />
-        {!!error && (
+        {(!!error || !!err) && (
           <div className={`${form.form__error} ${form.form__mt32px}`}>
             <svg
               width="24"
@@ -256,7 +259,7 @@ export default function AddBalance({ setClose }) {
                 fill="#EB5757"
               />
             </svg>
-            {error}
+            {error || err}
           </div>
         )}
         {!!msg && (

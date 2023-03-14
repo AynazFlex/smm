@@ -1,4 +1,3 @@
-import HeaderIndex from "../../components/HeaderIndex";
 import "./Profile.scss";
 import { useState, useEffect } from "react";
 /* eslint-disable @next/next/no-img-element */
@@ -8,6 +7,7 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/apiReducer";
 import History from "./History";
+import Update from "./Update";
 
 export default function Profile() {
   const [block, setBlock] = useState("zakaz");
@@ -21,7 +21,6 @@ export default function Profile() {
 
   return (
     <>
-      <HeaderIndex />
       <main className="main main--other">
         <section className="zakazi">
           <div className="zakazi__top">
@@ -197,7 +196,7 @@ export default function Profile() {
             <div className="container">
               {block === "zakaz" && <Zakazi />}
               {block === "history" && <History />}
-              {block === "settings" && <div>Сменить пароль</div>}
+              {block === "settings" && <Update />}
             </div>
           </div>
         </section>

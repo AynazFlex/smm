@@ -72,6 +72,9 @@ export const balanceHistory = createAsyncThunk(
 )
 
 const initialState = {
+  newOrder: {
+    service_id: ''
+  },
   sign: "",
   url: "",
   error: "",
@@ -130,6 +133,9 @@ const apiReducer = createSlice({
     logout(state) {
       state.isAuth = false;
       state.email = ""
+    },
+    addOrder(state, { payload }) {
+      state.newOrder = payload
     }
   },
   extraReducers: {
@@ -218,6 +224,6 @@ const apiReducer = createSlice({
 
 const { reducer, actions } = apiReducer;
 
-export const { reset, logout } = actions;
+export const { reset, logout, addOrder } = actions;
 
 export default reducer;

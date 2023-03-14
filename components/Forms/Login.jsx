@@ -15,9 +15,12 @@ export default function Login({ setClose, setWtf }) {
   const [type, setType] = useState("password");
 
   useEffect(() => {
+    return () => dispatch(reset());
+  }, [])
+
+  useEffect(() => {
     if(success) {
       router.push(url);
-      dispatch(reset())
       setClose()
     }
   }, [success]);

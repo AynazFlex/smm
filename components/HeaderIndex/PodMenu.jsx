@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./HeaderIndex.sass";
+import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { addOrder } from "../../store/apiReducer";
 
-export default function PodMenu({ setPodmenu }) {
+export default function PodMenu({ setPodmenu, setBurger }) {
   const [smclick, setSmclick] = useState(false);
   const toggleSmclick = () => setSmclick((value) => !value);
   const [smclick1, setSmclick1] = useState(false);
@@ -20,6 +23,13 @@ export default function PodMenu({ setPodmenu }) {
   const toggleSmclick7 = () => setSmclick7((value) => !value);
   const [smclick8, setSmclick8] = useState(false);
   const toggleSmclick8 = () => setSmclick8((value) => !value);
+
+  const dispatch = useDispatch();
+  const sendOrder = (data) => {
+    dispatch(addOrder(data))
+    setPodmenu(false)
+    setBurger(false)
+  }
 
   return (
     <div
@@ -107,13 +117,13 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Лайки</a>
-                  <a href="#">Просмотры</a>
-                  <a href="#">Комментарии</a>
-                  <a href="#">Истории</a>
-                  <a href="#">Зрители</a>
-                  <a href="#">Статистика</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '1'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '2'})}>Лайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '3'})}>Просмотры</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '4'})}>Комментарии</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '5'})}>Истории</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '6'})}>Зрители</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '7'})}>Статистика</Link>
                 </nav>
               </div>
             </div>
@@ -151,14 +161,14 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Просмотры</a>
-                  <a href="#">Реакции</a>
-                  <a href="#">Голосование</a>
-                  <a href="#">Репосты</a>
-                  <a href="#">Старт бота</a>
-                  <a href="#">Telegraph просмотры</a>
-                  <a href="#">Комментарии</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '8'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '9'})}>Просмотры</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '10'})}>Реакции</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '11'})}>Голосование</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '12'})}>Репосты</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '13'})}>Старт бота</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '14'})}>Telegraph просмотры</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '15'})}>Комментарии</Link>
                 </nav>
               </div>
             </div>
@@ -196,15 +206,15 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Лайки</a>
-                  <a href="#">Комментарии</a>
-                  <a href="#">Репосты</a>
-                  <a href="#">Просмотры на видео</a>
-                  <a href="#">Просмотры на пост</a>
-                  <a href="#">Накрутка опросов</a>
-                  <a href="#">Прослушивания</a>
-                  <a href="#">Релиз плейлиста</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '16'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '17'})}>Лайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '18'})}>Комментарии</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '19'})}>Репосты</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '20'})}>Просмотры на видео</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '21'})}>Просмотры на пост</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '22'})}>Накрутка опросов</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '23'})}>Прослушивания</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '24'})}>Релиз плейлиста</Link>
                 </nav>
               </div>
             </div>
@@ -242,11 +252,11 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Лайки</a>
-                  <a href="#">Комментарии</a>
-                  <a href="#">Репосты</a>
-                  <a href="#">Просмотры</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '25'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '26'})}>Лайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '27'})}>Комментарии</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '28'})}>Репосты</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '29'})}>Просмотры</Link>
                 </nav>
               </div>
             </div>
@@ -284,15 +294,15 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Просмотры</a>
-                  <a href="#">Просмотры трансляций</a>
-                  <a href="#">Просмотры Shorts</a>
-                  <a href="#">Лайки</a>
-                  <a href="#">Дизлайки</a>
-                  <a href="#">Комментарии</a>
-                  <a href="#">Репосты</a>
-                  <a href="#">Часы просмотров</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '30'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '31'})}>Просмотры</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '32'})}>Просмотры трансляций</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '33'})}>Просмотры Shorts</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '34'})}>Лайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '35'})}>Дизлайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '36'})}>Комментарии</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '37'})}>Репосты</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '38'})}>Часы просмотров</Link>
                 </nav>
               </div>
             </div>
@@ -330,9 +340,9 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Просмотры</a>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Зрители</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '39'})}>Просмотры</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '40'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '41'})}>Зрители</Link>
                 </nav>
               </div>
             </div>
@@ -370,13 +380,13 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Лайки</a>
-                  <a href="#">Просмотры</a>
-                  <a href="#">Комментарии</a>
-                  <a href="#">Истории</a>
-                  <a href="#">Зрители</a>
-                  <a href="#">Статистика</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '42'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '43'})}>Лайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '44'})}>Просмотры</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '45'})}>Комментарии</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '46'})}>Истории</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '47'})}>Зрители</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '48'})}>Статистика</Link>
                 </nav>
               </div>
             </div>
@@ -414,15 +424,15 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Лайки</a>
-                  <a href="#">Комментарии</a>
-                  <a href="#">Репосты</a>
-                  <a href="#">Просмотры на видео</a>
-                  <a href="#">Просмотры на пост</a>
-                  <a href="#">Накрутка опросов</a>
-                  <a href="#">Прослушивания</a>
-                  <a href="#">Релиз плейлиста</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '49'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '50'})}>Лайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '51'})}>Комментарии</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '52'})}>Репосты</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '53'})}>Просмотры на видео</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '54'})}>Просмотры на пост</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '55'})}>Накрутка опросов</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '56'})}>Прослушивания</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '57'})}>Релиз плейлиста</Link>
                 </nav>
               </div>
             </div>
@@ -460,11 +470,11 @@ export default function PodMenu({ setPodmenu }) {
                 }`}
               >
                 <nav>
-                  <a href="#">Подписчики</a>
-                  <a href="#">Лайки</a>
-                  <a href="#">Комментарии</a>
-                  <a href="#">Репосты</a>
-                  <a href="#">Просмотры</a>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '58'})}>Подписчики</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '59'})}>Лайки</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '60'})}>Комментарии</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '61'})}>Репосты</Link>
+                  <Link href="/order" onClick={() => sendOrder({service_id: '62'})}>Просмотры</Link>
                 </nav>
               </div>
             </div>
