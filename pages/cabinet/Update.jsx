@@ -10,6 +10,7 @@ const MessBlock = ({setClose}) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    dispatch(reset())
     return () => dispatch(reset())
   }, [])
 

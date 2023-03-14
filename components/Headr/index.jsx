@@ -1,4 +1,5 @@
 import './Headr.sass';
+import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
 
 const Headr = () => {
@@ -12,7 +13,7 @@ const Headr = () => {
 							<img src="img/design/utp_mob.png" className='headr__utp1mob' alt="Продвижение во всех соцсетях за пару кликов" />
 						</div>
 						<span>Получайте подписчиков, лайки, репосты, просмотры, прослушивания и любую другую активность на свои профили в социальных сетях по самым низким ценам на рынке и в самые быстрые сроки!</span>
-						<a href="#" className='orangeButtonOrange'>Начать продвижение</a>
+						<Link href="/#zakaz" className='orangeButtonOrange'>Начать продвижение</Link>
 						<div className="stars">
 							<div className="stars__wr">
 								<em>

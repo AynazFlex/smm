@@ -16,6 +16,7 @@ export default function AddBalance({ setClose }) {
   const router = useRouter();
 
   useEffect(() => {
+    dispatch(reset())
     const close = (e) => e.target.closest(`.${form.form}`) || setClose();
 
     wrapper.current.addEventListener("click", close);

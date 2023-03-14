@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import { useRef } from "react";
 import Faqs from "../components/Faqs";
 import Order from "../components/Order";
+import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
 
@@ -980,12 +981,14 @@ export default function Home() {
                   <div className="skidos__text">
                     Раздаем промокоды в Telegram каждую неделю
                   </div>
-                  <button
+                  <a
+                    href="https://t.me/+38-LLhCR6xFlMmVl"
+                    target="_blank"
+                    rel="noreferrer"
                     className="skidos__but orangeButtonOrange"
-                    type="button"
                   >
                     Получить промокод
-                  </button>
+                  </a>
                 </div>
                 <div className="section3__img">
                   <img src="img/design/telega.svg" alt="" />
@@ -1181,9 +1184,9 @@ export default function Home() {
                     />
                   </div>
                   <div className="zakaz__button">
-                    <button type="button" className="orangeButtonOrange">
+                    <Link href="/#zakaz" className="orangeButtonOrange">
                       Начать продвижение
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 <div className="zakaz__col tr">

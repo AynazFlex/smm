@@ -162,7 +162,7 @@ const HeaderIndex = () => {
                 {isAuth || <button onClick={() => setLogin(true)} className="orangeButton">
                   Войти
                 </button>}
-                <Link href="/#zakaz" className="orangeButtonOrange">
+                <Link href="/order" className="orangeButtonOrange">
                   Быстрый заказ
                 </Link>
                 {isAuth && (
@@ -201,7 +201,7 @@ const HeaderIndex = () => {
                   <img src="img/design/logo.svg" alt="" />
                 </Link>
                 <div className="headMob__wr">
-                  <Link href="/" className="headMob__zakaz">
+                  <Link href="/order" className="headMob__zakaz">
                     Быстрый заказ
                   </Link>
                   <button

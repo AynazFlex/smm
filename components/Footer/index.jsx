@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './Footer.sass';
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
@@ -13,27 +14,27 @@ const Footer = () => {
 					<div className="foot__txt">SMMSMM - сервис, где вы сможете приобрести качественное продвижение в социальных сетях по выгодным ценам.</div>
 					<nav className='foot__topnav'>
 						<div className="foot__row">
-							<a href="/">Услуги</a>
-							<a href="/">Отзывы</a>
+							<Link href="/">Услуги</Link>
+							<Link href="/#about">Отзывы</Link>
 						</div>
 
 						<div className="foot__row">
-							<a href="/">Как это работает</a>
-							<a href="/">Преимущества</a>
+							<Link href="/#kak">Как это работает</Link>
+							<Link href="/#preim">Преимущества</Link>
 						</div>
 						<div className="foot__row">
-							<a href="/">SMMFlow vs Другие сайты</a>
-							<a href="/">Частые вопросы</a>
+							<Link href="/#preim">SMMFlow vs Другие сайты</Link>
+							<Link href="/#faqs">Частые вопросы</Link>
 						</div>
 						<div className="foot__row">
-							<a href="/">Правила сервиса</a>
-							<a href="/">Контакты</a>
+							<Link href="/">Правила сервиса</Link>
+							<Link href="/">Контакты</Link>
 						</div>
 					</nav>
 					<nav className="foot__bottomnav">
-						<a href="/">Политика конфиденциальности</a>
-						<a href="/">Публичная оферта</a>
-						<a href="/">Пользовательское соглашение</a>
+						<Link href="/">Политика конфиденциальности</Link>
+						<Link href="/">Публичная оферта</Link>
+						<Link href="/">Пользовательское соглашение</Link>
 					</nav>
 				</div>
 				<div className="container__elem container__elem--4 container__elem--df container__elem--jcfend">
@@ -49,7 +50,7 @@ const Footer = () => {
 									</i>
 									<span>Чат с поддержкой</span>
 								</button>
-								<a href="/">
+								<Link href="/">
 									<i>
 										<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 											<path d="M2 8C2 5.79086 3.79086 4 6 4H18C20.2091 4 22 5.79086 22 8V16C22 18.2091 20.2091 20 18 20H6C3.79086 20 2 18.2091 2 16V8ZM6 6C4.89543 6 4 6.89543 4 8V16C4 17.1046 4.89543 18 6 18H18C19.1046 18 20 17.1046 20 16V8C20 6.89543 19.1046 6 18 6H6Z" fill="#B0B0B0" />
@@ -57,7 +58,7 @@ const Footer = () => {
 										</svg>
 									</i>
 									<span>support@smmsmm.net</span>
-								</a>
+								</Link>
 							</div>
 						</div>
 						<div className="karts">

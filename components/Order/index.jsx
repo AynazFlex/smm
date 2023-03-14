@@ -1,9 +1,11 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function Order() {
   const [social, setSocial] = useState("");
   const [service_1, setService_1] = useState("");
   const [service_2, setService_2] = useState("");
+  const router = useRouter()
 
   return (
     <>
@@ -275,7 +277,7 @@ export default function Order() {
           </div>
           <div className="section1Items__wr1">
             <button
-              onClick={() => alert(social, service_1, service_2)}
+              onClick={() => router.push("/order")}
               disabled={!(social && service_2 && service_1)}
               type="button"
               className="orangeButtonOrange"
@@ -530,7 +532,7 @@ export default function Order() {
                 </svg>
               </button>
               <button
-                onClick={() => alert(social, service_2)}
+                onClick={() => router.push("/order")}
                 disabled={!(social && service_2)}
                 type="button"
                 className="orangeButtonOrange"
