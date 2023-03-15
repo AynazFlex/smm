@@ -12,7 +12,7 @@ const Zakaz = () => {
         <div className={pay.zakaz__top_tarif}>Ваш заказ</div>
       </div>
       <div className={pay.zakaz__tarif}>
-        <img src="img/design/instagram_32px.png" alt="" />
+        <img src="img/design/Instagram_32px.png" alt="" />
         Подписчики инстаграм
       </div>
       <div className={pay.zakaz__midlle}>
