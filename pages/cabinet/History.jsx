@@ -1,4 +1,8 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { balanceHistory } from "../../store/apiReducer";
 import history from "./History.module.scss";
+import NoWrapper from "./NoWrapper";
 
 const TableBody = ({ created_ad, paid, amount }) => (
   <div className={history.table__body_item}>
@@ -9,52 +13,73 @@ const TableBody = ({ created_ad, paid, amount }) => (
 );
 
 export default function History() {
-  const historyArr = [
-    {
-      created_ad: "11.12.2022 в 12:43",
-      paid: "Оплачен",
-      amount: "1 000₽",
-    },
-    {
-      created_ad: "11.12.2022 в 12:43",
-      paid: "Оплачен",
-      amount: "1 000₽",
-    },
-    {
-      created_ad: "11.12.2022 в 12:43",
-      paid: "Оплачен",
-      amount: "1 000₽",
-    },
-    {
-      created_ad: "11.12.2022 в 12:43",
-      paid: "Оплачен",
-      amount: "1 000₽",
-    },
-    {
-      created_ad: "11.12.2022 в 12:43",
-      paid: "Оплачен",
-      amount: "1 000₽",
-    },
-    {
-      created_ad: "11.12.2022 в 12:43",
-      paid: "Оплачен",
-      amount: "1 000₽",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { balance } = useSelector((state) => state.api);
+
+  // useEffect(() => {
+  //   dispatch(balanceHistory())
+  // }, [])
+
+  // const historyArr = [
+  //   {
+  //     created_ad: "11.12.2022 в 12:43",
+  //     paid: "Оплачен",
+  //     amount: "1 000₽",
+  //   },
+  //   {
+  //     created_ad: "11.12.2022 в 12:43",
+  //     paid: "Оплачен",
+  //     amount: "1 000₽",
+  //   },
+  //   {
+  //     created_ad: "11.12.2022 в 12:43",
+  //     paid: "Оплачен",
+  //     amount: "1 000₽",
+  //   },
+  //   {
+  //     created_ad: "11.12.2022 в 12:43",
+  //     paid: "Оплачен",
+  //     amount: "1 000₽",
+  //   },
+  //   {
+  //     created_ad: "11.12.2022 в 12:43",
+  //     paid: "Оплачен",
+  //     amount: "1 000₽",
+  //   },
+  //   {
+  //     created_ad: "11.12.2022 в 12:43",
+  //     paid: "Оплачен",
+  //     amount: "1 000₽",
+  //   },
+  // ];
+
+  // useEffect(() => {
+  //   dispatch(getOrdersHistory())
+  // }, [])
 
   return (
     <div className={history.history}>
       <h1 className={history.history__title}>История пополнений</h1>
-      <div className={history.table}>
-        <div className={history.table__title}>
-          <div className={history.table__title_item_1}>Дата</div>
-          <div className={history.table__title_item_2}>Сумма</div>
-          <div className={history.table__title_item_3}>Статус</div>
+      {balance.length > 0 && (
+        <div className={history.table}>
+          <div className={history.table__title}>
+            <div className={history.table__title_item_1}>Дата</div>
+            <div className={history.table__title_item_2}>Сумма</div>
+            <div className={history.table__title_item_3}>Статус</div>
+          </div>
+          <div className={history.table__body}>
+            {balance.map((item, i) => (
+              <TableBody {...item} key={i} />
+            ))}
+          </div>
         </div>
-        <div className={history.table__body}>{
-            historyArr.map((item, i) => <TableBody {...item} key={i}/>)
-        }</div>
-      </div>
+      )}
+      {balance.length === 0 && (
+        <NoWrapper
+          title="Пополнений ещё не было"
+          body="Вы ещё ни разу не пополняли баланс. Пополните баланс и сделайте свой первый заказ!"
+        />
+      )}
     </div>
   );
 }

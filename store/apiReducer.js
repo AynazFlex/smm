@@ -92,7 +92,7 @@ const initialState = {
     url: "",
   },
   orders: [],
-  balanceHistory: []
+  balance: []
 };
 
 const fulfilled = (state, { payload }) => {
@@ -194,7 +194,7 @@ const apiReducer = createSlice({
     [checkoutOrders.rejected.type]: rejected,
     //orders history
     [getOrdersHistory.fulfilled.type]: (state, { payload }) => {
-      state.orders.concat(payload.orders)
+      state.orders = payload.orders
       state.isPending = false
     },
     [getOrdersHistory.pending.type]: (state) => {
@@ -211,7 +211,7 @@ const apiReducer = createSlice({
     [balanceTopUp.rejected.type]: rejected,
     //balance history
     [balanceHistory.fulfilled.type]: (state, { payload }) => {
-      state.balanceHistory.concat(payload.orders)
+      state.balance = payload.orders
       state.isPending = false
     },
     [balanceHistory.pending.type]: (state) => {

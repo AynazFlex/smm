@@ -84,7 +84,10 @@ const HeaderIndex = () => {
                 <Link href="/#zakaz" onClick={() => setBurger(false)} className="orangeButtonOrange">
                   Быстрый заказ
                 </Link>
-                <Link href="/profile" onClick={() => setBurger(false)} className="orangeButton">
+                <Link href="/" onClick={() => {
+                  setBurger(false)
+                  setLogin(true)
+                }} className="orangeButton">
                   Войти
                 </Link>
 
