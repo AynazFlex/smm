@@ -1,4 +1,3 @@
-import HeaderIndex from "../components/HeaderIndex";
 import Footer from "../components/Footer";
 import { Montserrat, Unbounded } from "@next/font/google";
 import { Provider } from "react-redux";
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Provider store={store}>
-        <HeaderIndex />
         <Component {...pageProps} />
         <Footer />
       </Provider>

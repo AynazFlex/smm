@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { balanceHistory } from "../../store/apiReducer";
-import history from "./History.module.scss";
-import NoWrapper from "./NoWrapper";
+import history from "../../styles/Balance-history.module.scss";
+import NoWrapper from "../../components/cabinet/NoWrapper";
+import CabinetContainer from "../../components/cabinet/CabinetContainer";
 
 const TableBody = ({ created_ad, paid, amount }) => (
   <div className={history.table__body_item}>
@@ -12,7 +13,7 @@ const TableBody = ({ created_ad, paid, amount }) => (
   </div>
 );
 
-export default function History() {
+export default function History({catalog}) {
   const dispatch = useDispatch();
   const { balance } = useSelector((state) => state.api);
 
@@ -58,6 +59,7 @@ export default function History() {
   // }, [])
 
   return (
+    <CabinetContainer catalog={catalog}>
     <div className={history.history}>
       <h1 className={history.history__title}>История пополнений</h1>
       {balance.length > 0 && (
@@ -81,5 +83,17 @@ export default function History() {
         />
       )}
     </div>
+    </CabinetContainer>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch("https://flowsmm.net/api/data/all");
+  const { catalog } = await res.json();
+
+  return {
+    props: {
+      catalog,
+    },
+  };
 }

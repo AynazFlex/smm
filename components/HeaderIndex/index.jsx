@@ -8,7 +8,7 @@ import AddBalance from "../Forms/AddBalance";
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 
-const HeaderIndex = () => {
+const HeaderIndex = ({catalog}) => {
   const [scroll, setScroll] = useState(false);
   const [podmenu, setPodmenu] = useState(false);
   const [burger, setBurger] = useState(false);
@@ -39,7 +39,7 @@ const HeaderIndex = () => {
             <div className="container__elem container__elem--12">
               <div className="mobileMenu__top">
                 <Link href="/" className="logo">
-                  <img src="img/design/logo.svg" alt="" />
+                  <img src="/img/design/logo.svg" alt="" />
                 </Link>
                 <button
                   type="button"
@@ -66,19 +66,19 @@ const HeaderIndex = () => {
               <div className="mobileMenu__bottom">
                 <nav>
                   <Link href="#" onClick={setPodmenu}>
-                    <img src="img/design/mm1.png" alt="Услуги" />
+                    <img src="/img/design/mm1.png" alt="Услуги" />
                   </Link>
                   <Link href="/#about" onClick={() => setBurger(false)}>
-                    <img src="img/design/mm2.png" alt="Отзывы" />
+                    <img src="/img/design/mm2.png" alt="Отзывы" />
                   </Link>
                   <Link href="/#kak" onClick={() => setBurger(false)}>
-                    <img src="img/design/mm3.png" alt="Как это работает" />
+                    <img src="/img/design/mm3.png" alt="Как это работает" />
                   </Link>
                   <Link href="/#preim" onClick={() => setBurger(false)}>
-                    <img src="img/design/mm4.png" alt="Преимущества" />
+                    <img src="/img/design/mm4.png" alt="Преимущества" />
                   </Link>
                   <Link href="/#faqs" onClick={() => setBurger(false)}>
-                    <img src="img/design/mm5.png" alt="Частые вопросы" />
+                    <img src="/img/design/mm5.png" alt="Частые вопросы" />
                   </Link>
                 </nav>
                 <Link href="/#zakaz" onClick={() => setBurger(false)} className="orangeButtonOrange">
@@ -137,13 +137,13 @@ const HeaderIndex = () => {
           </div>
         </div>
       )}
-      {podmenu && <PodMenu setPodmenu={setPodmenu} setBurger={setBurger}/>}
+      {podmenu && <PodMenu catalog={catalog} setPodmenu={setPodmenu} setBurger={setBurger}/>}
       <header className={scroll ? "header scrolled" : "header"}>
         <div className="header__top">
           <div className={isAuth ? "container container--jcsb" : "container"}>
             <div className="container__elem container__elem--8 container__elem--df container__elem--aic">
               <Link href="/" className="logo">
-                <img src="img/design/logo.svg" alt="" />
+                <img src="/img/design/logo.svg" alt="" />
               </Link>
               <nav className="menu">
                 <Link
@@ -201,7 +201,7 @@ const HeaderIndex = () => {
             <div className="container__elem container__elem--12">
               <div className="headMob">
                 <Link href="/" className="logo">
-                  <img src="img/design/logo.svg" alt="" />
+                  <img src="/img/design/logo.svg" alt="" />
                 </Link>
                 <div className="headMob__wr">
                   <Link href="/order" className="headMob__zakaz">

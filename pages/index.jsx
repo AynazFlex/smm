@@ -7,14 +7,16 @@ import { useRef } from "react";
 import Faqs from "../components/Faqs";
 import Order from "../components/Order";
 import Link from "next/link";
+import HeaderIndex from "../components/HeaderIndex";
 
 /* eslint-disable @next/next/no-img-element */
 
-export default function Home() {
+export default function Home({catalog}) {
   const swiperRef = useRef();
 
   return (
     <>
+      <HeaderIndex catalog={catalog}/>
       <Headr />
       <main className="main">
         <section id="zakaz" className="section section1">
@@ -1228,4 +1230,15 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await fetch("https://flowsmm.net/api/data/all");
+  const {catalog}= await res.json();
+
+  return {
+    props: {
+      catalog
+    },
+  };
 }

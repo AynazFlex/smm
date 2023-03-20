@@ -67,7 +67,7 @@
 	height: 53px;
 	padding: 0 16px;
 	margin-right: 12px;
-	&.active, &:hover {
+	&:active, &:hover {
 		background: rgba(255, 119, 45, 0.15);
 		.zakaziTab__txt {
 			color: $accent

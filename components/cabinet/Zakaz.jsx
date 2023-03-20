@@ -1,4 +1,4 @@
-import "./Profile.scss";
+import "./Cabinet.scss";
 
 export default function Zakaz({ created_at, status, quantity, price, url, service_name, icon }) {
 
