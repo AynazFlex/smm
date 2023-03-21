@@ -238,6 +238,7 @@ export default function OrderIndex({catalog}) {
                     >
                       {!!catalog && catalog.services[service.id].map(item => (
                         <div
+                          key={item.id}
                           onMouseEnter={() =>
                             setZakaz({
                               tarif_name: item.name,
