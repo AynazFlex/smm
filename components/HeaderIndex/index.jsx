@@ -5,8 +5,6 @@ import FormWrap from "../Forms/FormWrap";
 import PodMenu from "./PodMenu";
 import { useSelector } from "react-redux";
 import AddBalance from "../Forms/AddBalance";
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @next/next/no-html-link-for-pages */
 
 const HeaderIndex = ({catalog}) => {
   const [scroll, setScroll] = useState(false);

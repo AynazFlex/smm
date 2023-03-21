@@ -209,6 +209,12 @@ export async function getServerSideProps() {
   const res = await fetch("https://flowsmm.net/api/data/all");
   const { catalog } = await res.json();
 
+  if(!catalog) {
+    return {
+      notFound: true
+    }
+  }
+
   return {
     props: {
       catalog,

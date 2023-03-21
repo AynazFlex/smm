@@ -108,15 +108,15 @@
 	align-items: center
 	width: 260px
 	border-radius: 16px
-	height: 72px
+	min-height: 72px
 	background: #F9F9F9
 	margin-right: 24px
 	margin-bottom: 24px
+	box-sizing: border-box
 	padding: 0px 12px
 	border: 2px solid transparent
 	@include breakpoint (xs)
 		width: 152px
-		height: auto
 		padding: 12px
 		flex-direction: column
 		align-items: center
@@ -132,22 +132,21 @@
 	&__ico
 		display: flex
 		align-items: center
+		justify-content: center
+		width: 48px
+		height: 48px
 		margin-right: 20px
 		@include breakpoint (xs)
 			margin-right: 0px
 			margin-bottom: 10px
-			width: 50px
-			left: 4px
-			top: -22px
-			position: relative
-			height: 50px
+			width: 32px
+			height: 32px
 	&__txt
 		font-weight: 600
 		font-size: 18px
 		line-height: 24px
 		@include breakpoint (xs)
 			font-size: 14px
-			margin-top: -31px
 .section1Itemstep1
 .checkbox_vib
 	display: flex

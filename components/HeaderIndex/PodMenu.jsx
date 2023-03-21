@@ -1,36 +1,7 @@
-import { useState } from "react";
 import "./HeaderIndex.sass";
-import Link from "next/link";
-import { useDispatch } from "react-redux";
-import { addOrder } from "../../store/apiReducer";
 import MenuItem from "./MenuItem";
 
 export default function PodMenu({ setPodmenu, setBurger, catalog }) {
-  const [smclick, setSmclick] = useState(false);
-  const toggleSmclick = () => setSmclick((value) => !value);
-  const [smclick1, setSmclick1] = useState(false);
-  const toggleSmclick1 = () => setSmclick1((value) => !value);
-  const [smclick2, setSmclick2] = useState(false);
-  const toggleSmclick2 = () => setSmclick2((value) => !value);
-  const [smclick3, setSmclick3] = useState(false);
-  const toggleSmclick3 = () => setSmclick3((value) => !value);
-  const [smclick4, setSmclick4] = useState(false);
-  const toggleSmclick4 = () => setSmclick4((value) => !value);
-  const [smclick5, setSmclick5] = useState(false);
-  const toggleSmclick5 = () => setSmclick5((value) => !value);
-  const [smclick6, setSmclick6] = useState(false);
-  const toggleSmclick6 = () => setSmclick6((value) => !value);
-  const [smclick7, setSmclick7] = useState(false);
-  const toggleSmclick7 = () => setSmclick7((value) => !value);
-  const [smclick8, setSmclick8] = useState(false);
-  const toggleSmclick8 = () => setSmclick8((value) => !value);
-
-  const dispatch = useDispatch();
-  const sendOrder = (data) => {
-    dispatch(addOrder(data))
-    setPodmenu(false)
-    setBurger(false)
-  }
 
   return (
     <div
@@ -84,8 +55,11 @@ export default function PodMenu({ setPodmenu, setBurger, catalog }) {
             </button>
           </div>
           <div className="servicePodmenu__wr">
-              {catalog.categories.map(item => (
-                <MenuItem key={item.id} {...item} types={catalog.types[`${item.id}`]}/>
+              {!!catalog && catalog.categories.map(item => (
+                <MenuItem key={item.id} {...item} types={catalog.types[`${item.id}`]} setClose={() => {
+                  setBurger(false)
+                  setPodmenu(false)
+                }}/>
               ))}
           </div>
         </div>

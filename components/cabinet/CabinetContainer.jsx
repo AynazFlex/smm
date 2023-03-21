@@ -47,7 +47,10 @@ export default function CabinetContainer({catalog, children}) {
                         </em>
                         <span>{email}</span>
                       </div>
-                      <button type="button" onClick={() => dispatch(logout())} className="vhodnie__exit">
+                      <button type="button" onClick={() => {
+                        dispatch(logout())
+                        router.push('/')
+                      }} className="vhodnie__exit">
                         <em>
                           <img src="/img/design/logout.svg" alt="" />
                         </em>
@@ -59,7 +62,7 @@ export default function CabinetContainer({catalog, children}) {
                     <div className="zakaziTabs">
                       <Link
                         href="/cabinet"
-                        className='zakaziTab'
+                        className={router.pathname === '/cabinet' ? 'zakaziTab zakaziTab--active' : 'zakaziTab'}
                       >
                         <div className="zakaziTab__ico">
                           <svg
@@ -121,7 +124,7 @@ export default function CabinetContainer({catalog, children}) {
                       </Link>
                       <Link
                         href="/cabinet/balance-history"
-                        className='zakaziTab'
+                        className={router.pathname === '/cabinet/balance-history' ? 'zakaziTab zakaziTab--active' : 'zakaziTab'}
                       >
                         <div className="zakaziTab__ico">
                           <svg
@@ -152,7 +155,7 @@ export default function CabinetContainer({catalog, children}) {
                       </Link>
                       <Link
                         href="/cabinet/settings"
-                        className='zakaziTab'
+                        className={router.pathname === '/cabinet/settings' ? 'zakaziTab zakaziTab--active' : 'zakaziTab'}
                       >
                         <div className="zakaziTab__ico">
                           <svg

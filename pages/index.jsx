@@ -9,8 +9,6 @@ import Order from "../components/Order";
 import Link from "next/link";
 import HeaderIndex from "../components/HeaderIndex";
 
-/* eslint-disable @next/next/no-img-element */
-
 export default function Home({catalog}) {
   const swiperRef = useRef();
 
@@ -26,7 +24,7 @@ export default function Home({catalog}) {
                 <div className="section__h2">
                   <img src="img/design/s1zag.jpg" alt="Быстрый заказ" />
                 </div>
-                <Order />
+                <Order catalog={catalog} />
               </div>
             </div>
           </div>
@@ -1232,13 +1230,21 @@ export default function Home({catalog}) {
   );
 }
 
+
+
 export async function getServerSideProps() {
   const res = await fetch("https://flowsmm.net/api/data/all");
-  const {catalog}= await res.json();
+  const { catalog } = await res.json();
+
+  if(!catalog) {
+    return {
+      notFound: true
+    }
+  }
 
   return {
     props: {
-      catalog
+      catalog,
     },
   };
 }

@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function Order() {
+export default function Order({ catalog }) {
   const [social, setSocial] = useState("");
   const [service_1, setService_1] = useState("");
-  const [service_2, setService_2] = useState("");
-  const router = useRouter()
+  const [service_2, setService_2] = useState(null);
+  const router = useRouter();
 
   return (
     <>
@@ -15,114 +15,22 @@ export default function Order() {
             Сначала выберите социальную сеть
           </div>
           <div className="section1Items__wr">
-            <button
-              onClick={() => setSocial("instagram")}
-              className={`section1Item ${
-                social === "instagram" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz1.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">Instagram</div>
-            </button>
-            <button
-              onClick={() => setSocial("twitter")}
-              className={`section1Item ${
-                social === "twitter" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz2.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">Twitter</div>
-            </button>
-            <button
-              onClick={() => setSocial("vk")}
-              className={`section1Item ${
-                social === "vk" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz3.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">VK</div>
-            </button>
-            <button
-              onClick={() => setSocial("youtube")}
-              className={`section1Item ${
-                social === "youtube" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz4.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">YouTube</div>
-            </button>
-            <button
-              onClick={() => setSocial("telegram")}
-              className={`section1Item ${
-                social === "telegram" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz5.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">Telegram</div>
-            </button>
-            <button
-              onClick={() => setSocial("facebook")}
-              className={`section1Item ${
-                social === "facebook" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz6.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">Facebook</div>
-            </button>
-            <button
-              onClick={() => setSocial("tiktok")}
-              className={`section1Item ${
-                social === "tiktok" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz7.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">TikTok</div>
-            </button>
-            <button
-              onClick={() => setSocial("twitch")}
-              className={`section1Item ${
-                social === "twitch" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz8.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">Twitch</div>
-            </button>
-            <button
-              onClick={() => setSocial("rutube")}
-              className={`section1Item section1Item--full ${
-                social === "rutube" && "section1Item--act"
-              }`}
-              type="button"
-            >
-              <div className="section1Item__ico">
-                <img src="img/design/bz9.svg" alt="" />
-              </div>
-              <div className="section1Item__txt">RuTube</div>
-            </button>
+            {!!catalog &&
+              catalog.categories.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => setSocial(item.id)}
+                  className={`section1Item ${
+                    social === item.id && "section1Item--act"
+                  }`}
+                  type="button"
+                >
+                  <div className="section1Item__ico">
+                    <img src={item.icon} alt="" />
+                  </div>
+                  <div className="section1Item__txt">{item.name}</div>
+                </button>
+              ))}
           </div>
         </div>
         <div className="section1Items">
@@ -175,109 +83,29 @@ export default function Order() {
             {!!social && !!service_1 && (
               <>
                 <div className="section1Items__wr2">
-                  <button
-                    onClick={() => setService_2("subscribers")}
-                    className={`section1Item ${
-                      service_2 === "subscribers" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u1.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">Подписчики</div>
-                  </button>
-                  <button
-                    onClick={() => setService_2("spectators")}
-                    className={`section1Item ${
-                      service_2 === "spectators" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u2.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">Зрители</div>
-                  </button>
-                  <button
-                    onClick={() => setService_2("liks")}
-                    className={`section1Item ${
-                      service_2 === "liks" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u3.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">Лайки</div>
-                  </button>
-                  <button
-                    onClick={() => setService_2("static")}
-                    className={`section1Item ${
-                      service_2 === "static" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u4.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">Статистика</div>
-                  </button>
-                  <button
-                    onClick={() => setService_2("views")}
-                    className={`section1Item ${
-                      service_2 === "views" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u5.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">Просмотры</div>
-                  </button>
-                  <button
-                    onClick={() => setService_2("IGTV")}
-                    className={`section1Item ${
-                      service_2 === "IGTV" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u6.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">IGTV</div>
-                  </button>
-                  <button
-                    onClick={() => setService_2("comments")}
-                    className={`section1Item ${
-                      service_2 === "comments" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u7.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">Комментарии</div>
-                  </button>
-                  <button
-                    onClick={() => setService_2("reels")}
-                    className={`section1Item ${
-                      service_2 === "reels" && "section1Item--act"
-                    }`}
-                    type="button"
-                  >
-                    <div className="section1Item__ico">
-                      <img src="img/design/u8.svg" alt="" />
-                    </div>
-                    <div className="section1Item__txt">Reels</div>
-                  </button>
+                  {!!catalog &&
+                    catalog.types[social].map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => setService_2(item)}
+                        className={`section1Item ${
+                          service_2?.id === item.id && "section1Item--act"
+                        }`}
+                        type="button"
+                      >
+                        <div className="section1Item__ico">
+                          <img src={item.icon} alt="" />
+                        </div>
+                        <div className="section1Item__txt">{item.name}</div>
+                      </button>
+                    ))}
                 </div>
               </>
             )}
           </div>
           <div className="section1Items__wr1">
             <button
-              onClick={() => router.push("/order")}
+              onClick={() => router.push(`/order/${service_2?.slug}`)}
               disabled={!(social && service_2 && service_1)}
               type="button"
               className="orangeButtonOrange"
@@ -294,114 +122,22 @@ export default function Order() {
               Сначала выберите социальную сеть
             </div>
             <div className="section1Items__wr">
-              <button
-                onClick={() => setSocial("instagram")}
-                className={`section1Item ${
-                  social === "instagram" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz1.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">Instagram</div>
-              </button>
-              <button
-                onClick={() => setSocial("twitter")}
-                className={`section1Item ${
-                  social === "twitter" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz2.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">Twitter</div>
-              </button>
-              <button
-                onClick={() => setSocial("vk")}
-                className={`section1Item ${
-                  social === "vk" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz3.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">VK</div>
-              </button>
-              <button
-                onClick={() => setSocial("youtube")}
-                className={`section1Item ${
-                  social === "youtube" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz4.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">YouTube</div>
-              </button>
-              <button
-                onClick={() => setSocial("telegram")}
-                className={`section1Item ${
-                  social === "telegram" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz5.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">Telegram</div>
-              </button>
-              <button
-                onClick={() => setSocial("facebook")}
-                className={`section1Item ${
-                  social === "facebook" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz6.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">Facebook</div>
-              </button>
-              <button
-                onClick={() => setSocial("tiktok")}
-                className={`section1Item ${
-                  social === "tiktok" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz7.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">TikTok</div>
-              </button>
-              <button
-                onClick={() => setSocial("twitch")}
-                className={`section1Item ${
-                  social === "twitch" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz8.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">Twitch</div>
-              </button>
-              <button
-                onClick={() => setSocial("rutube")}
-                className={`section1Item section1Item--full ${
-                  social === "rutube" && "section1Item--act"
-                }`}
-                type="button"
-              >
-                <div className="section1Item__ico">
-                  <img src="img/design/bz9.svg" alt="" />
-                </div>
-                <div className="section1Item__txt">RuTube</div>
-              </button>
+              {!!catalog &&
+                catalog.categories.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => setSocial(item.id)}
+                    className={`section1Item ${
+                      social === item.id && "section1Item--act"
+                    }`}
+                    type="button"
+                  >
+                    <div className="section1Item__ico">
+                      <img src={item.icon} alt="" />
+                    </div>
+                    <div className="section1Item__txt">{item.name}</div>
+                  </button>
+                ))}
             </div>
           </div>
         )}
@@ -410,108 +146,28 @@ export default function Order() {
             <div className="section1Items__title">Затем выберите услугу</div>
             <div className="section1Items__steps">
               <div className="section1Items__wr2">
-                <button
-                  onClick={() => setService_2("subscribers")}
-                  className={`section1Item ${
-                    service_2 === "subscribers" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u1.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">Подписчики</div>
-                </button>
-                <button
-                  onClick={() => setService_2("spectators")}
-                  className={`section1Item ${
-                    service_2 === "spectators" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u2.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">Зрители</div>
-                </button>
-                <button
-                  onClick={() => setService_2("liks")}
-                  className={`section1Item ${
-                    service_2 === "liks" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u3.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">Лайки</div>
-                </button>
-                <button
-                  onClick={() => setService_2("static")}
-                  className={`section1Item ${
-                    service_2 === "static" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u4.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">Статистика</div>
-                </button>
-                <button
-                  onClick={() => setService_2("views")}
-                  className={`section1Item ${
-                    service_2 === "views" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u5.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">Просмотры</div>
-                </button>
-                <button
-                  onClick={() => setService_2("IGTV")}
-                  className={`section1Item ${
-                    service_2 === "IGTV" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u6.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">IGTV</div>
-                </button>
-                <button
-                  onClick={() => setService_2("comments")}
-                  className={`section1Item ${
-                    service_2 === "comments" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u7.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">Комментарии</div>
-                </button>
-                <button
-                  onClick={() => setService_2("reels")}
-                  className={`section1Item ${
-                    service_2 === "reels" && "section1Item--act"
-                  }`}
-                  type="button"
-                >
-                  <div className="section1Item__ico">
-                    <img src="img/design/u8.svg" alt="" />
-                  </div>
-                  <div className="section1Item__txt">Reels</div>
-                </button>
+                {!!catalog &&
+                  catalog.types[social].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setService_2(item)}
+                      className={`section1Item ${
+                        service_2?.id === item.id && "section1Item--act"
+                      }`}
+                      type="button"
+                    >
+                      <div className="section1Item__ico">
+                        <img src={item.icon} alt="" />
+                      </div>
+                      <div className="section1Item__txt">{item.name}</div>
+                    </button>
+                  ))}
               </div>
             </div>
             <div className="section1Items__wr1">
               <button
                 onClick={() => {
-                  setService_2("");
+                  setService_2(null);
                   setSocial("");
                 }}
                 className="buttonBack"
@@ -532,7 +188,7 @@ export default function Order() {
                 </svg>
               </button>
               <button
-                onClick={() => router.push("/order")}
+                onClick={() => router.push(`/order/${service_2?.slug}`)}
                 disabled={!(social && service_2)}
                 type="button"
                 className="orangeButtonOrange"

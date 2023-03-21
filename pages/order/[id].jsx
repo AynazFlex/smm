@@ -1,20 +1,46 @@
+import { useRouter } from "next/router";
 import order from "../../styles/Order.module.scss";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { createOrders, reset } from "../../store/apiReducer";
 import { useDispatch, useSelector } from "react-redux";
 import HeaderIndex from "../../components/HeaderIndex";
 import { setValue, MessWrap, Zakaz } from "../../components/Order/assets";
 
-export default function OrderIndex({catalog}) {
-  const [soc_network, setSoc_network] = useState(null);
+const setValues = (catalog, id) => {
+  let servic = null;
+  let index = null;
+  for (let key in catalog.types) {
+    const check = catalog.types[key].find((type) => type.slug === id);
+    if (check) {
+      servic = check;
+      index = key;
+      break;
+    }
+  }
+
+  const social = catalog.categories.find((item) => item.id === index);
+
+  return {
+    social,
+    servic,
+  };
+};
+
+export default function OrderFromPath({ catalog }) {
+  const {
+    query: { id },
+    push,
+  } = useRouter();
+  const { social, servic } = setValues(catalog, id);
+  const [soc_network, setSoc_network] = useState(social);
   const [tarif, setTarif] = useState(null);
-  const [service, setService] = useState(null);
-  const [open, setOpen] = useState("network");
+  const [service, setService] = useState(servic);
+  const [open, setOpen] = useState("tarif");
   const init = {
     tarif_name: "",
     tarif_label: "",
-    tarif_description: ""
-  }
+    tarif_description: "",
+  };
   const [zakaz, setZakaz] = useState(init);
   const [zakazClick, setZakazClick] = useState(init);
   const [url, setUrl] = useState("");
@@ -24,9 +50,20 @@ export default function OrderIndex({catalog}) {
   const dispatch = useDispatch();
   const { error, success, isPending } = useSelector((state) => state.api);
 
+  useEffect(() => {
+    const { social, servic } = setValues(catalog, id);
+    if (!social || !servic) push("/order");
+    setSoc_network(social);
+    setService(servic);
+    setTarif(null);
+    setOpen("tarif");
+  }, [id]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createOrders({ url: url, quantity: quantity, service_id: tarif.id }));
+    dispatch(
+      createOrders({ url: url, quantity: quantity, service_id: tarif.id })
+    );
   };
 
   useEffect(() => {
@@ -41,7 +78,7 @@ export default function OrderIndex({catalog}) {
 
   return (
     <>
-      <HeaderIndex catalog={catalog}/>
+      <HeaderIndex catalog={catalog} />
       <main className="main main--other">
         <div className="container">
           <div className={order.order}>
@@ -98,183 +135,188 @@ export default function OrderIndex({catalog}) {
                       onClick={() => setOpen("service")}
                       className={order.form__label_dropdown}
                     >
-                      {!!catalog && (
-                        catalog.categories.map(item => (
+                      {!!catalog &&
+                        catalog.categories.map((item) => (
                           <div
                             key={item.id}
                             onClick={() => {
-                              setSoc_network(item)
-                              setService("")
-                              setTarif("")
-                            }}
-                            className={order.form__label_dropdown_item}
-                          >
-                          <img src={item.icon} alt="" />
-                            {item.name}
-                          </div>
-                        ))
-                      )}
-                    </div>
-                  )}
-                </div>
-                {!!soc_network && <div
-                  className={`${order.form__label} ${
-                    open === "service" ? order.form__label_active : ""
-                  }`}
-                >
-                  Услуга
-                  <div
-                    onClick={() =>
-                      setOpen((prev) => (prev === "service" ? "" : "service"))
-                    }
-                    className={
-                      open === "service"
-                        ? `${order.form__select} ${order.form__select_act}`
-                        : order.form__select
-                    }
-                  >
-                    {service ? (
-                      setValue(service)
-                    ) : (
-                      <div className={order.form__select_placeholder}>
-                        Выберите услугу
-                      </div>
-                    )}
-                    <button
-                      className={
-                        open === "service" ? order.form__select_open : ""
-                      }
-                      type="button"
-                    >
-                      <svg
-                        width="17"
-                        height="10"
-                        viewBox="0 0 17 10"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M0.792893 0.792893C1.18342 0.402369 1.81658 0.402369 2.20711 0.792893L8.5 7.08579L14.7929 0.792893C15.1834 0.402369 15.8166 0.402369 16.2071 0.792893C16.5976 1.18342 16.5976 1.81658 16.2071 2.20711L9.20711 9.20711C8.81658 9.59763 8.18342 9.59763 7.79289 9.20711L0.792893 2.20711C0.402369 1.81658 0.402369 1.18342 0.792893 0.792893Z"
-                          fill={open === "service" ? "#FF772D" : "#A3ACC5"}
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  {open === "service" && (
-                    <div
-                      onClick={() => setOpen("tarif")}
-                      className={order.form__label_dropdown}
-                    >
-                      {!!catalog && (
-                        catalog.types[soc_network.id].map(item => (
-                          <div
-                            key={item.id}
-                            onClick={() => {
-                              setService(item)
-                              setTarif(null)
+                              setSoc_network(item);
+                              setService("");
+                              setTarif("");
                             }}
                             className={order.form__label_dropdown_item}
                           >
                             <img src={item.icon} alt="" />
                             {item.name}
                           </div>
-                        ))
-                      )}
+                        ))}
                     </div>
                   )}
-                </div>}
-                {!!service && <div
-                  className={`${order.form__label} ${
-                    open === "tarif" ? order.form__label_active : ""
-                  }`}
-                >
-                  Тариф
+                </div>
+                {!!soc_network && (
                   <div
-                    onClick={() =>
-                      setOpen((prev) => (prev === "tarif" ? "" : "tarif"))
-                    }
-                    className={
-                      open === "tarif"
-                        ? `${order.form__select} ${order.form__select_act}`
-                        : order.form__select
-                    }
+                    className={`${order.form__label} ${
+                      open === "service" ? order.form__label_active : ""
+                    }`}
                   >
-                    {tarif ? (
-                      tarif.name
-                    ) : (
-                      <div className={order.form__select_placeholder}>
-                        Выберите тариф
+                    Услуга
+                    <div
+                      onClick={() =>
+                        setOpen((prev) => (prev === "service" ? "" : "service"))
+                      }
+                      className={
+                        open === "service"
+                          ? `${order.form__select} ${order.form__select_act}`
+                          : order.form__select
+                      }
+                    >
+                      {service ? (
+                        setValue(service)
+                      ) : (
+                        <div className={order.form__select_placeholder}>
+                          Выберите услугу
+                        </div>
+                      )}
+                      <button
+                        className={
+                          open === "service" ? order.form__select_open : ""
+                        }
+                        type="button"
+                      >
+                        <svg
+                          width="17"
+                          height="10"
+                          viewBox="0 0 17 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M0.792893 0.792893C1.18342 0.402369 1.81658 0.402369 2.20711 0.792893L8.5 7.08579L14.7929 0.792893C15.1834 0.402369 15.8166 0.402369 16.2071 0.792893C16.5976 1.18342 16.5976 1.81658 16.2071 2.20711L9.20711 9.20711C8.81658 9.59763 8.18342 9.59763 7.79289 9.20711L0.792893 2.20711C0.402369 1.81658 0.402369 1.18342 0.792893 0.792893Z"
+                            fill={open === "service" ? "#FF772D" : "#A3ACC5"}
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    {open === "service" && (
+                      <div
+                        onClick={() => setOpen("tarif")}
+                        className={order.form__label_dropdown}
+                      >
+                        {!!catalog &&
+                          catalog.types[soc_network.id].map((item) => (
+                            <div
+                              key={item.id}
+                              onClick={() => {
+                                setService(item);
+                                setTarif(null);
+                              }}
+                              className={order.form__label_dropdown_item}
+                            >
+                              <img src={item.icon} alt="" />
+                              {item.name}
+                            </div>
+                          ))}
                       </div>
                     )}
-                    <button
-                      className={
-                        open === "tarif" ? order.form__select_open : ""
-                      }
-                      type="button"
-                    >
-                      <svg
-                        width="17"
-                        height="10"
-                        viewBox="0 0 17 10"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M0.792893 0.792893C1.18342 0.402369 1.81658 0.402369 2.20711 0.792893L8.5 7.08579L14.7929 0.792893C15.1834 0.402369 15.8166 0.402369 16.2071 0.792893C16.5976 1.18342 16.5976 1.81658 16.2071 2.20711L9.20711 9.20711C8.81658 9.59763 8.18342 9.59763 7.79289 9.20711L0.792893 2.20711C0.402369 1.81658 0.402369 1.18342 0.792893 0.792893Z"
-                          fill={open === "tarif" ? "#FF772D" : "#A3ACC5"}
-                        />
-                      </svg>
-                    </button>
                   </div>
-                  {open === "tarif" && (
+                )}
+                {!!service && (
+                  <div
+                    className={`${order.form__label} ${
+                      open === "tarif" ? order.form__label_active : ""
+                    }`}
+                  >
+                    Тариф
                     <div
-                      onMouseLeave={() => setZakaz({ ...zakazClick })}
-                      onClick={() => setOpen("")}
-                      className={order.form__label_dropdown}
+                      onClick={() =>
+                        setOpen((prev) => (prev === "tarif" ? "" : "tarif"))
+                      }
+                      className={
+                        open === "tarif"
+                          ? `${order.form__select} ${order.form__select_act}`
+                          : order.form__select
+                      }
                     >
-                      {!!catalog && catalog.services[service.id].map(item => (
-                        <div
-                          onMouseEnter={() =>
-                            setZakaz({
-                              tarif_name: item.name,
-                              tarif_label: "",
-                              tarif_description: item.description
-                            })
-                          }
-                          onClick={() => {
-                            setZakazClick({
-                              tarif_name: item.name,
-                              tarif_label: "",
-                              tarif_description: item.description
-                            });
-                            setTarif(item)
-                            setQuantity(item.default_quantity)
-                          }}
-                          className={`${order.form__label_dropdown_item} ${order.form__label_dropdown_jcsb}`}
-                        >
-                          {item.name}
+                      {tarif ? (
+                        tarif.name
+                      ) : (
+                        <div className={order.form__select_placeholder}>
+                          Выберите тариф
                         </div>
-                      ))}
+                      )}
+                      <button
+                        className={
+                          open === "tarif" ? order.form__select_open : ""
+                        }
+                        type="button"
+                      >
+                        <svg
+                          width="17"
+                          height="10"
+                          viewBox="0 0 17 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M0.792893 0.792893C1.18342 0.402369 1.81658 0.402369 2.20711 0.792893L8.5 7.08579L14.7929 0.792893C15.1834 0.402369 15.8166 0.402369 16.2071 0.792893C16.5976 1.18342 16.5976 1.81658 16.2071 2.20711L9.20711 9.20711C8.81658 9.59763 8.18342 9.59763 7.79289 9.20711L0.792893 2.20711C0.402369 1.81658 0.402369 1.18342 0.792893 0.792893Z"
+                            fill={open === "tarif" ? "#FF772D" : "#A3ACC5"}
+                          />
+                        </svg>
+                      </button>
                     </div>
-                  )}
-                </div>}
-                {!!tarif && <label>
-                  Ссылка на профиль
-                  <input
-                    onChange={(e) => setUrl(e.target.value)}
-                    value={url}
-                    type="text"
-                    placeholder={tarif.placeholder}
-                  />
-                  <div className={order.form__warning}>
-                    Профиль должен быть открытым для правильной работы наших
-                    услуг.
+                    {open === "tarif" && (
+                      <div
+                        onMouseLeave={() => setZakaz({ ...zakazClick })}
+                        onClick={() => setOpen("")}
+                        className={order.form__label_dropdown}
+                      >
+                        {!!catalog &&
+                          catalog.services[service.id].map((item) => (
+                            <div
+                              onMouseEnter={() =>
+                                setZakaz({
+                                  tarif_name: item.name,
+                                  tarif_label: "",
+                                  tarif_description: item.description,
+                                })
+                              }
+                              onClick={() => {
+                                setZakazClick({
+                                  tarif_name: item.name,
+                                  tarif_label: "",
+                                  tarif_description: item.description,
+                                });
+                                setTarif(item);
+                                setQuantity(item.default_quantity);
+                              }}
+                              className={`${order.form__label_dropdown_item} ${order.form__label_dropdown_jcsb}`}
+                            >
+                              {item.name}
+                            </div>
+                          ))}
+                      </div>
+                    )}
                   </div>
-                </label>}
+                )}
+                {!!tarif && (
+                  <label>
+                    Ссылка на профиль
+                    <input
+                      onChange={(e) => setUrl(e.target.value)}
+                      value={url}
+                      type="text"
+                      placeholder={tarif.placeholder}
+                    />
+                    <div className={order.form__warning}>
+                      Профиль должен быть открытым для правильной работы наших
+                      услуг.
+                    </div>
+                  </label>
+                )}
                 {!!tarif && (
                   <label>
                     Кол-во
@@ -288,7 +330,7 @@ export default function OrderIndex({catalog}) {
                     />
                     <div className={order.form__warning}>
                       {`От ${tarif.min} до ${tarif.max}`}
-                  </div>
+                    </div>
                   </label>
                 )}
                 <label>
@@ -377,10 +419,10 @@ export async function getServerSideProps() {
   const res = await fetch("https://flowsmm.net/api/data/all");
   const { catalog } = await res.json();
 
-  if(!catalog) {
+  if (!catalog) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
 
   return {

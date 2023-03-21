@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function MenuItem({icon, name, types}) {
+export default function MenuItem({icon, name, types, setClose}) {
   const [smclick, setSmclick] = useState(false);
   const toggleSmclick = () => setSmclick((value) => !value);
 
@@ -39,7 +39,7 @@ export default function MenuItem({icon, name, types}) {
       >
         <nav>
             {types.map(item => (
-                <Link key={item.id} href={`/order/${item.slug}`}>{item.name}</Link>
+                <Link onClick={setClose} key={item.id} href={`/order/${item.slug}`}>{item.name}</Link>
             ))}
         </nav>
       </div>
